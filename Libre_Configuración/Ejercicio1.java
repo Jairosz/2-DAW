@@ -29,30 +29,34 @@ public class Ejercicio1 {
             System.out.println("6. Comprobar si es palíndroma");
             System.out.println("7. Salir");
             menuOption = teclado.nextInt();
-            teclado.nextLine(); // Consumir la nueva línea después de leer un entero
+            teclado.nextLine(); 
 
             switch(menuOption){
-                case 1:
-                    cadenaAlReves(cadena);
-                    break;
-                case 2:
-                    conteoVocales(cadena);
-                    break;
-                case 3:
-                    conteoConsonantes(cadena);
-                    break;
-                case 4:
+                case 1: // dar la vuelta a la cadena
+                    cadenaAlReves(cadena); 
+                break;
+                case 2: // conteo vocales
+                    conteoVocales(cadena); 
+                break;
+                case 3: // conteo consonantes
+                    conteoConsonantes(cadena); 
+                break;
+                case 4: // pasar a minuscula
                     cadena = cadena.toLowerCase();
                     System.out.println("Cadena en minúscula: " + cadena);
-                    break;
-                case 5:
+                break;
+                case 5:  // pasar a mayuscula
                     cadena = cadena.toUpperCase();
                     System.out.println("Cadena en mayúscula: " + cadena);
-                    break;
-                case 6:
-                   // esPalindroma(cadena);
-                    break;
-                case 7:
+                break;
+                case 6:    // verificar si es palindroma o no
+                        if (esPalindroma(cadena) == true){
+                            System.out.println("Es palindroma");
+                        }else{
+                            System.out.println("No es palindroma");
+                        }
+                break;
+                case 7: // salida
                     salir = false;
                     break;
                 default:
@@ -92,13 +96,15 @@ public class Ejercicio1 {
         System.out.println("El total de consonantes es: " + contadorConsonantes);
     }
 
-    /*public static void esPalindroma(String cadena){
-        String cadenaInvertida = cadenaAlReves(cadena).replaceAll("\\s", "");
-        cadena = cadena.replaceAll("\\s", "");
-        if(cadena.equalsIgnoreCase(cadenaInvertida)){
-            System.out.println("La cadena es palíndroma.");
-        } else {
-            System.out.println("La cadena no es palíndroma.");
-        }
-    }*/
+    
+    public static boolean esPalindroma(String cadena){
+
+		cadena = cadena.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o")
+        .replace("ú", "u").replace(" ", "").replace(".", "").replace(",", "");
+
+        String invertida = new StringBuilder(cadena).reverse().toString();
+
+        return invertida.equals(cadena);
+    }
+
 }
