@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Cambio de imagenes con JS</h1>
+    <img id="myFPImage" onclick="cambiarFoto()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfMoFzj4LkzG32H6ghFrAOfHKcaJRkAWQFbDrf9GDMKA&s">
+    <p>haz click para cambiar las letras</p>
+    <script>
+        function cambiarFoto(){
+            var image = document.getElementById('myFPImage');
+            if (image.src.match("green")){
+                image.src = "https://kinsta.com/es/wp-content/uploads/sites/8/2020/10/tipos-de-archivos-de-imagen.png"
+            }else{
+                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfMoFzj4LkzG32H6ghFrAOfHKcaJRkAWQFbDrf9GDMKA&s"
+            }
+        }
+    
+    </script>
+</body>
+</html>
