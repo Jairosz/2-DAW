@@ -16,3 +16,5 @@ function cambiarFoto(){
         }
     }
 }
+
+// algo no va ;d
