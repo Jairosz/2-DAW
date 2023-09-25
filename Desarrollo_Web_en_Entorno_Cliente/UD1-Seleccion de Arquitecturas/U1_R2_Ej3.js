@@ -10,5 +10,4 @@ function cambiarColor(){
         botonFalse.classList.remove('colorBotonDefault');
         botonFalse.classList.add('colorBotonRed');
     }
-
 }
