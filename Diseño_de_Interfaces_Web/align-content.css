@@ -4,26 +4,44 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 /* Box-sizing border-box */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.box {
+body{
+    margin: 0;
+}
+.container {
+    display: flex;
+    border: 10px solid goldenrod;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .box {
     color:white;
     font-size: 100px;
     text-align: center;
     text-shadow:4px 4px 0 rgba(0,0,0,0.1);
     padding:10px;
+    width: 33.333333%;
   }
-  .container {
-    display: flex;
-    border: 10px solid goldenrod;
-    height: 100vh;
-    align-items: baseline;
-  }
-  .box1 { font-size: 30px; }
-  .box3 { font-size: 130px; }
-  .box4 { font-size: 200px; }
-  .box5 { font-size: 10px; }
-  .box10 { font-size: 90px; }
-
-.box1 { background:#1abc9c;}
+  .box1 { background:#1abc9c;}
 .box2 { background:#3498db;}
 .box3 { background:#9b59b6;}
 .box4 { background:#34495e;}
@@ -33,4 +51,3 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .box8 { background:#bdc3c7;}
 .box9 { background:#2ecc71;}
 .box10 { background:#16a085;}
-
