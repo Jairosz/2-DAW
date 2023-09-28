@@ -1,0 +1,11 @@
+"config"
+{
+	"bindings"
+	{
+		"z"		"<unbound>"
+		"MOUSE5"		"+voicerecord"
+		"MOUSE4"		"slot10"
+		"t"		"r_cleardecals"
+		"0"		"<unbound>"
+	}
+}
