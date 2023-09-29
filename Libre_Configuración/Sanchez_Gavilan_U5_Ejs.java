@@ -70,8 +70,7 @@ public class Sanchez_Gavilan_U5_Ejs {
                     System.out.println("Texto en mayúsculas: " + enMayusculas);
                     System.out.println("Texto en minúsculas: " + enMinusculas);
                     break;
-                case "3":
-                    // Implementar conteo de ocurrencias de un carácter
+                case "3": // Implementar conteo de ocurrencias de un carácter
                     System.out.print("Introduce una línea de texto: ");
                     String lineaTexto2 = teclado.nextLine();
             
@@ -88,14 +87,50 @@ public class Sanchez_Gavilan_U5_Ejs {
             
                     System.out.println("El carácter '" + caracterBusqueda + "' aparece " + contador + " veces en el texto.");
                     break;
-                case "4":
-                    // Implementar conteo de ocurrencias de letras del alfabeto
+                    case "4":            // Contar ocurrencias de letras del alfabeto
+
+                    System.out.print("Introduce una línea de texto: ");
+                    String linea = teclado.nextLine();
+                    
+                    int[] contadorLetras = new int[26];
+                    
+                    for (int i = 0; i < linea.length(); i++) {
+                        char letra = linea.charAt(i);
+                        if (Character.isLetter(letra)) {
+                            int index = Character.toUpperCase(letra) - 'A';
+                            contadorLetras[index]++;
+                        }
+                    }
+                    
+                    for (int i = 0; i < 26; i++) {char letter = (char) ('A' + i);
+                        System.out.println("La letra'" + letter + "' aparece " + contadorLetras[i] + " veces.");
+                    }
                     break;
-                case "5":
-                    // Implementar impresión de palabras que comienzan con 'b'
+                
+                case "5":// Implementar impresión de palabras que comienzan con 'b'
+                    System.out.print("Introduce una línea de texto: ");
+                    String texto = teclado.nextLine();
+                
+                    String[] palabras = texto.split("\\s+"); 
+                
+                    for (String palabra : palabras) {
+                        if (palabra.startsWith("b") || palabra.startsWith("B")) {
+                            System.out.println(palabra);
+                        }
+                    }
                     break;
                 case "6":
                     // Implementar impresión de palabras que comienzan con 'ED'
+                    System.out.print("Introduce una línea de texto: ");
+                    texto = teclado.nextLine();
+                    
+                    String[] palabras2 = texto.split("\\s+");
+                    
+                    for (String palabra : palabras2) {
+                        if (palabra.startsWith("ED") || palabra.startsWith("ed")) {
+                            System.out.println(palabra);
+                        }
+                    }
                     break;
                 case "7":
                     // Implementar conversión de código a carácter
