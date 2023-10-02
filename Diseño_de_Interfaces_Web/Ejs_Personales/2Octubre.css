@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+body{
+    margin: 3;
+}
+.leftNav{
+    display: flex;
+    flex-direction: column;
+
+}
+.rightNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3vh;
+    margin-right: 2vh;
+}
