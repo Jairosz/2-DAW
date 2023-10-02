@@ -18,4 +18,5 @@ body{
     display: flex;
     flex-direction: row;
     margin-left: 3vh;
+    margin-right: 2vh;
 }
