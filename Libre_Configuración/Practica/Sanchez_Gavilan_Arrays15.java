@@ -18,9 +18,16 @@ public class Sanchez_Gavilan_Arrays15 {
 
             switch(opcionMenu){
                 case 1: // billete primera clase
+                    System.out.println("Vamos a comprar tu billete introduce:");
                     for(int i = 0; i >= avionAsientos.length; i++){
-
+                        if(avionAsientos[i] == true){
+                            System.out.println("El asiento " + avionAsientos[i] + "está ocupado");
+                        }else{
+                            System.out.println("El asiento " + avionAsientos[i] + "está libre, asignando asiento.");
+                            avionAsientos[i] = true;
+                        }
                     }
+                    
                 break;
                 case 2: // billete economico 
                 break;
