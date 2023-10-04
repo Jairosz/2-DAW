@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <?php 
+<?php 
     $palabra1 = "roma";
     $palabra2 = "geroma";
     $palabra13ultimas = substr($palabra1,-3);
@@ -15,26 +15,17 @@
     $palabra12ultimas = substr($palabra1,-2);
     $palabra22ultimas = substr($palabra2,-2);
 
-    echo ("Las palabras utilizadas son:")
-    echo ("roma y geroma")
+    echo "Las palabras utilizadas son: ";
+    echo "roma y geroma";
 
-
-    if($palabra13ultimas === $palabra23ultimas){
-        echo ("Estas palabras si riman")
-    }else if($palabra12ultimas === $palabra22ultimas)
-        echo ("Estas palabras riman un poco")
-    }else{
-        echo ("Estas no riman")
+    if ($palabra13ultimas === $palabra23ultimas) {
+        echo " Estas palabras riman";
+    } else if ($palabra12ultimas === $palabra22ultimas) {
+        echo " Estas palabras riman un poco";
+    } else {
+        echo " Estas no riman";
     }
+?>
 
-
-
-
-
-
-
-
-
-    ?>
 </body>
 </html>
