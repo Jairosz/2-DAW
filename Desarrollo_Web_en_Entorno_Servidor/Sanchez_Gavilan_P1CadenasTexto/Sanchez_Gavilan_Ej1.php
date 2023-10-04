@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<?php 
+<?php
     $palabra1 = "roma";
     $palabra2 = "geroma";
     $palabra13ultimas = substr($palabra1,-3);
