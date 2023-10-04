@@ -1,0 +1,76 @@
+.row {
+    width: 100%;
+    display: flex;
+
+}
+
+.col1 {
+    width: 8.33%;
+    border: 5px solid red;
+}
+
+.col2 {
+    width: 16.33%;
+    border: 5px solid blue;
+
+}
+
+.col3 {
+    width: 25%;
+    border: 5px solid red;
+
+}
+
+.col4 {
+    width: 33.33%;
+    border: 5px solid blue;
+
+}
+
+.col5 {
+    width: 41.66666667%;
+    border: 5px solid red;
+}
+
+
+.col6 {
+    width: 50%;
+    border: 5px solid blue;
+
+}
+
+.col7 {
+    width: 58.33333333%;
+    border: 5px solid red;
+
+}
+
+.col8 {
+    width: 66.66666667%;
+    border: 5px solid blue;
+
+}
+
+.col9 {
+    width: 75%;
+    border: 5px solid red;
+
+}
+
+.col10 {
+    width: 83.33333333%;
+    border: 5px solid blue;
+
+}
+
+.col11 {
+    width: 91.66666667%;
+    border: 5px solid red;
+
+}
+
+.col12 {
+    width: 100%;
+    border: 5px solid blue;
+
+}
