@@ -15,15 +15,15 @@
     $palabra12ultimas = substr($palabra1,-2);
     $palabra22ultimas = substr($palabra2,-2);
 
-    echo "Las palabras utilizadas son: ";
-    echo "roma y geroma";
+    echo "<p>Las palabras utilizadas son: </p>";
+    echo "<p> roma y geroma </p>";
 
     if ($palabra13ultimas === $palabra23ultimas) {
-        echo " Estas palabras riman";
+        echo "<p> Estas palabras riman </p>";
     } else if ($palabra12ultimas === $palabra22ultimas) {
-        echo " Estas palabras riman un poco";
+        echo " <p> Estas palabras riman poco </p>";
     } else {
-        echo " Estas no riman";
+        echo " <p> Estas no riman  </p>";
     }
 ?>
 
