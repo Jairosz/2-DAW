@@ -1,6 +1,4 @@
-.container{
-    text-align: center;
-}
-.row{
-    display: flex;
+.bigrow{
+    margin: 0;
+    padding: 0;
 }
