@@ -7,13 +7,13 @@
 </head>
 <body>
     <? 
-    $cadena = hola soy jairo
+    $cadena = "hola soy jairo";
 
-    $palabras = explode(" ", $cadena)
+    $palabras = explode(" ", $cadena);
 
     for($i = 0; $palabras == 2; $i ++;){
 
-        echo ($palabras[i]) . " ";
+        echo ($palabras[i]) . " "
     }
     
     
