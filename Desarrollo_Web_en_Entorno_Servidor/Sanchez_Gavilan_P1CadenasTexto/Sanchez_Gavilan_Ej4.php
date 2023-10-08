@@ -12,7 +12,7 @@
     $palabras = explode(" ", $cadena);
     
     for ($i = 0; $i < 2 && $i < count($palabras); $i++) {
-        echo $palabras[$i] . " ";
+        echo $palabras[$i];
     }
     
 
