@@ -8,7 +8,7 @@
 <body>
 <?php
 // Cadena que deseas comprobar
-$cadena = "ejemplo@dominio.com";
+$cadena = "jairo@gmail.com";
 
 // Comprueba si la cadena contiene "@" y "."
 if (strpos($cadena, "@") !== false && strpos($cadena, ".") !== false) {
