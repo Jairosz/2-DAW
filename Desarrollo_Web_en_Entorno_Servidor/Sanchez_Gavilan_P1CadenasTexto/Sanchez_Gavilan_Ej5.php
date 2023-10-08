@@ -11,7 +11,7 @@
             $fraselower = strtolower($frase);
         
             $numeroDeTR = substr_count($frase, 'tr');
-            
+            echo "<p> FRASE: $frase";
             echo "<p>El número de letras 'tr' en la frase es: $numeroDeTR</p>";
             ?>
 </body>
