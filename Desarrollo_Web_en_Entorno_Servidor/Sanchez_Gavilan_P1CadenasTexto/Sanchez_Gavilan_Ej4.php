@@ -10,10 +10,11 @@
     $cadena = "hola soy jairo";
 
     $palabras = explode(" ", $cadena);
-
-    for ($i = 0; $i < 2; $i++) {
+    
+    for ($i = 0; $i < 2 && $i < count($palabras); $i++) {
         echo $palabras[$i] . " ";
     }
+    
 
     
     ?>
