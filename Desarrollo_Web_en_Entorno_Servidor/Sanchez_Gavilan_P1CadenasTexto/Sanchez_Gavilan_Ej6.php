@@ -8,11 +8,9 @@
 <body>
     <?php 
         $numero = 33;
-    
+        echo "<p> El numero en decimal es: $numero ";
         printf("Número en binario: %b<br>", $numero);
-        printf("Número en octal: %o", $numero);
-    
-    
+        printf("Número en octal: %o", $numero); 
     ?>
 </body>
 </html>
