@@ -7,11 +7,9 @@
 </head>
 <body>
 <?php
-// Cadena que deseas comprobar
 $cadena = "jairo@gmail.com";
 $nombreUsuario = strstr($cadena, '@', true);
 
-// Comprueba si la cadena contiene "@" y "."
 echo "La cadena jairo@gmail.com";
 
 if (strpos($cadena, "@") !== false && strpos($cadena, ".") !== false) {
