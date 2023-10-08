@@ -6,6 +6,16 @@
     <title>Ejercicio2</title>
 </head>
 <body>
-    
+<?php
+// Cadena que deseas comprobar
+$cadena = "ejemplo@dominio.com";
+
+// Comprueba si la cadena contiene "@" y "."
+if (strpos($cadena, "@") !== false && strpos($cadena, ".") !== false) {
+    echo "La cadena contiene '@' y '.'";
+} else {
+    echo "La cadena no contiene '@' y '.'";
+}
+?> 
 </body>
 </html>
