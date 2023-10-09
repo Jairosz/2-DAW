@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jairo</title>
+</head>
+<body>
+    <h1>Calculadora de Circunferencia y Área de Círculo</h1>
+
+    <label for="radio">Ingresa el radio del círculo:</label>
+    <input type="number" id="radio" placeholder="Radio del círculo">
+
+    <button onclick="calcularCircunferenciaYArea()">Calcular</button>
+
+    <p>La longitud de la circunferencia es: <span id="resultadoCircunferencia"></span></p>
+    <p>El área del círculo es: <span id="resultadoArea"></span></p>
+
+    <script>
+        function calcularCircunferenciaYArea() {
+            const radio = parseFloat(document.getElementById("radio").value);
+
+            if (!isNaN(radio)) {
+                const circunferencia = 2 * Math.PI * radio;
+                const area = Math.PI * Math.pow(radio, 2);
+
+                document.getElementById("resultadoCircunferencia").textContent = circunferencia;
+                document.getElementById("resultadoArea").textContent = area;
+            } else {
+                alert("Por favor, ingresa un valor válido para el radio del círculo.");
+            }
+        }
+    </script>
+</body>
+</html>

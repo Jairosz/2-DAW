@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jairo</title>
+</head>
+
+<body>
+    <input type="number" placeholder="Número" id="number">
+    <p>Número introducido: <span id="numeroIntroducido"></span></p>
+    <p>Contadores: 
+        <span id="contador5"></span> 
+        <span id="contador21"></span> 
+        <span id="contador4"></span>
+    </p>
+    <script>
+        
+        var numberInput = document.getElementById("number");
+
+        // cambio el valor del número
+        numberInput.addEventListener("input", function() {
+
+            var number = parseFloat(numberInput.value);
+
+            // Actualiza el valor del número introducido
+            document.getElementById("numeroIntroducido").textContent = isNaN(number) ? "" : number;
+
+            var contador5 = 5 + number;
+            var contador21 = 21 + number;
+            var contador4 = 4 - number;
+
+            document.getElementById("contador5").textContent = contador5;
+            document.getElementById("contador21").textContent = contador21;
+            document.getElementById("contador4").textContent = contador4;
+        });
+    </script>
+</body>
+
+</html>
