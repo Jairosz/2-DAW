@@ -1,0 +1,16 @@
+.col-12{
+    background-color: aqua;
+}
+.col-9{
+    background-color:green;
+}
+.col-3{
+    background-color: red;
+}
+@media (max-width: 568px){
+
+    .row{
+        flex-wrap: wrap;
+    }
+
+}

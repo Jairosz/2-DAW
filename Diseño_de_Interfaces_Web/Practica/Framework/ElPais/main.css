@@ -31,3 +31,9 @@ h1{
 .border-right{
     border-left: 1px solid grey;
 }
+@media(max-width: 500px){
+    h2{
+        display: none;
+    }
+}
+    
