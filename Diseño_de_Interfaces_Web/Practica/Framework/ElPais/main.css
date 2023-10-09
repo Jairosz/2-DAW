@@ -25,3 +25,9 @@ h1{
     font-family: serif;
     font-size: 15px;
 }
+.border-left{
+    border-left: 1px solid grey;
+}
+.border-right{
+    border-left: 1px solid grey;
+}
