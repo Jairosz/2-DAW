@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Número</title>
+</head>
+<body>
+    <h1>Conversión de Número</h1>
+
+    <label for="numero">Ingresa un número entero:</label>
+    <input type="number" id="numero" placeholder="Número entero">
+
+    <button onclick="convertirNumero()">Convertir</button>
+
+    <p>Número en base 16 (hexadecimal): <span id="resultadoHexadecimal"></span></p>
+    <p>Número en base 5 (quinary): <span id="resultadoQuinary"></span></p>
+
+    <script>
+        function convertirNumero() {
+            const numeroEntero = parseInt(document.getElementById("numero").value);
+
+            if (!isNaN(numeroEntero)) {
+                // Conversión a base 16 (hexadecimal)
+                const numeroHexadecimal = numeroEntero.toString(16);
+
+                // Conversión a base 5 (quinary)
+                const numeroQuinary = numeroEntero.toString(5);
+
+                // Mostrar resultados
+                document.getElementById("resultadoHexadecimal").textContent = numeroHexadecimal;
+                document.getElementById("resultadoQuinary").textContent = numeroQuinary;
+            } else {
+                alert("Por favor, ingresa un número entero válido.");
+            }
+        }
+    </script>
+</body>
+</html>
