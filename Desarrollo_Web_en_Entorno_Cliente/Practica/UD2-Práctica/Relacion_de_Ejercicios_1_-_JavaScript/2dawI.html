@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor Octal a Decimal y Binario</title>
+</head>
+<body>
+    <h1>Conversor Octal a Decimal y Binario</h1>
+    <p>Introduce un número en base ocho:</p>
+    <input type="text" id="octalInput">
+    <button onclick="convertir()">Convertir</button>
+    <p>Resultado en base decimal: <span id="decimalResult"></span></p>
+    <p>Resultado en base binaria: <span id="binarioResult"></span></p>
+
+    <script>
+        function convertir() {
+            const octalInput = document.getElementById("octalInput").value;
+            const decimalResult = parseInt(octalInput, 8);
+            const binarioResult = decimalResult.toString(2);
+
+            document.getElementById("decimalResult").textContent = decimalResult;
+            document.getElementById("binarioResult").textContent = binarioResult;
+        }
+    </script>
+</body>
+</html>

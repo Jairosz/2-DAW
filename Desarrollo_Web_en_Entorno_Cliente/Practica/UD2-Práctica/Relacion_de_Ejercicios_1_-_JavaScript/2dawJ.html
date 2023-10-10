@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Bases</title>
+</head>
+<body>
+    <h1>Conversor de Bases</h1>
+    <p>Introduce un número entero:</p>
+    <input type="number" id="numeroInput">
+    <p>Introduce la base a la que deseas convertirlo:</p>
+    <input type="number" id="baseInput">
+    <button onclick="convertir()">Convertir</button>
+    <p>Resultado:</p>
+    <span id="resultado"></span>
+
+    <script>
+        function convertir() {
+            const numeroInput = parseInt(document.getElementById("numeroInput").value);
+            const baseInput = parseInt(document.getElementById("baseInput").value);
+            
+            if (isNaN(numeroInput) || isNaN(baseInput)) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa números válidos.";
+            } else if (baseInput < 2 || baseInput > 36) {
+                document.getElementById("resultado").textContent = "La base debe estar entre 2 y 36.";
+            } else {
+                const resultado = numeroInput.toString(baseInput);
+                document.getElementById("resultado").textContent = resultado;
+            }
+        }
+    </script>
+</body>
+</html>
