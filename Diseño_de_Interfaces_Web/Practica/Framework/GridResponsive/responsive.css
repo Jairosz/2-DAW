@@ -1,0 +1,71 @@
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+*{
+    margin: 0px auto;
+}
+.box{
+    width: 100%;
+    height: 15vh;
+
+}
+.box1{
+    background-color: blue;
+}
+.box2{
+    background-color: cyan;
+}
+.box3{
+    background-color: green;
+}
+.box4{
+    background-color: red;
+}
+.box5{
+    background-color:orange;
+
+}
+@media(min-width: 450px){
+    .box2{
+        width: 50%;
+    }
+    .box3{
+        width: 50%;
+    }
+
+    
+}
+@media(min-width: 550px){
+    .box2{
+        width: 50%;
+    }
+    .box3{
+        width: 50%;
+    }
+    .box4{
+        width: 30%;
+    }
+    .box5{
+        width: 70%;
+    }
+
+}
+@media(min-width: 800px){
+    body{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .box2{
+        width: 50%;
+    }
+    .box3{
+        width: 50%;
+    }
+    .box4{
+        width: 30%;
+    }
+    .box5{
+        width: 70%;
+    }
+}
