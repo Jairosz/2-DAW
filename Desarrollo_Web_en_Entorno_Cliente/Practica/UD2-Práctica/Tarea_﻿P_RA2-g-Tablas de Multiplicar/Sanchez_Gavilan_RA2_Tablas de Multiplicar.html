@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA2 - Tablas de Multiplicar</title>
+    <!-- Hecho por Jairo Sánchez Gavilán 2º DAW. Asignatura Desarrollo Web en entorno Cliente -->
+</head>
+
+<body>
+    <ul id="tablaMulti"></ul>
+    <ul id="tablaSuma"></ul>
+    <ul id="tablaDiv"></ul>
+    <ul id="tablaBits"></ul>
+
+
+    <script>
+        // ENUNCIADO.
+        // Tabla de multiplicar del 7. Tabla de sumar del 8. Tabla de dividir del 9.  
+
+        // Utilizar los tres tipos de bucles que hay en JavaScript (para cada número un tipo de bucle diferente).  
+
+        // Sabiendo que cuando desplazamos 1 bit a la derecha dividimos un entero por 2 y cuando lo desplazamos a la izquierda estamos multiplicando por 2.  
+
+        // Que tu aplicación también imprima el resultado de las siguientes operaciones empleando desplazamiento de bits:  
+
+        // 125 / 8 =
+
+        // 40 x 4= 
+
+        // 25 / 2=
+
+        // 10 x 16= 
+
+        // Inicializamos variables para almacenar las tablas
+        var tablaMultiplicar = "<h2>Tabla de multiplicar del 7</h2>";
+        var tablaSumar = "<h2>Tabla de sumar del 8</h2>";
+        var tablaDividir = "<h2>Tabla de dividir del 9</h2>";
+        var tablaBits = "<h2>Tabla de Bits </h2>";
+        // Generamos la tabla de multiplicar del 7 con un bucle FOR
+        for (let i = 1; i <= 10; i++) {
+            const factor1 = 7;
+            const factor2 = i;
+            const producto = factor1 * factor2;
+            tablaMultiplicar += factor1 + ' x ' + factor2 + ' = ' + producto + "<br>";
+        }
+
+        // Mostramos la tabla de multiplicar en un elemento con id "tablaMulti"
+        document.getElementById("tablaMulti").innerHTML = tablaMultiplicar;
+
+        // Generamos la tabla de sumar del 8 con un bucle WHILE
+        var j = 0; // Inicializamos el contador
+        while (j <= 10) {
+            var suma = 8 + j;
+            tablaSumar += '8 + ' + j + ' = ' + suma + "<br>";
+            j++;
+        }
+
+        // Mostramos la tabla de sumar en un elemento con id "tablaSuma"
+        document.getElementById("tablaSuma").innerHTML += tablaSumar;
+
+        // Generamos la tabla de dividir del 9 con un bucle DO-WHILE
+        var m = 9; // Inicializamos el dividendo en 9
+        var k = 9; // Inicializamos el divisor en 9
+        var contador = 0; // Inicializamos un contador
+        do {
+            var resultado = m / k;
+            tablaDividir += m + ':' + k + ' = ' + resultado + "<br>";
+            m += 9; // Aumentamos el dividendo en 9
+            contador++; // Incrementamos el contador
+        } while (contador < 10); // Continuamos hasta que el contador alcance 10
+
+        // Mostramos la tabla de dividir en un elemento con id "tablaDiv"
+        document.getElementById("tablaDiv").innerHTML += tablaDividir;
+
+
+
+        // Operaciones con desplazamiento de bits
+        var resultado1 = 125 >> 3; // Desplazamiento de bits a la derecha (dividir por 2^3)
+        tablaBits += "125 / 8 = " + resultado1 + "<br>";
+
+        var resultado2 = 40 << 2; // Desplazamiento de bits a la izquierda (multiplicar por 2^2)
+        tablaBits += "40 x 4 = " + resultado2 + "<br>";
+
+        var resultado3 = 25 >> 1; // Desplazamiento de bits a la derecha (dividir por 2^1)
+        tablaBits += "25 / 2 = " + resultado3 + "<br>";
+
+        var resultado4 = 10 << 4; // Desplazamiento de bits a la izquierda (multiplicar por 2^4)
+        tablaBits += "10 x 16 = " + resultado4 + "<br>";
+
+        // Mostramos todo en elementos HTML con identificadores específicos
+        document.getElementById("tablaMulti").innerHTML = tablaMultiplicar;
+        document.getElementById("tablaSuma").innerHTML = tablaSumar;
+        document.getElementById("tablaDiv").innerHTML = tablaDividir;
+        document.getElementById("tablaBits").innerHTML = tablaBits;
+    </script>
+</body>
+
+</html>
