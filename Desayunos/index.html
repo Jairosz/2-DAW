@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurante XYZ - Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #FF5733;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid #333;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        thead {
+            background-color: #FF5733;
+            color: white;
+        }
+
+        select,
+        input,
+        button {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FF7F50;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2º DAW PEDIDOS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Bebidas</th>
+                <th>🧊</th>
+                <th>Comidas</th>
+                <th>Entera</th>
+                <th>Precio Total</th>
+                <th>Precio con Descuento</th>
+            </tr>
+        </thead>
+        <tbody id="pedido-table">
+            <!-- Aquí se añadirán dinámicamente los pedidos -->
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" id="nombre" placeholder="Nombre del cliente">
+
+    <select id="bebida">
+        <option value="Colacao">Colacao</option>
+        <option value="Café con leche">Café con leche</option>
+        <option value="Café solo largo">Café solo largo</option>
+        <option value="Café Americano">Café Americano</option>
+        <option value="Té Rojo con Leche">Té Rojo con Leche</option>
+        <option value="Zumo de naranja">Zumo de Naranja</option>
+    </select>
+
+    <label for="hielo">🧊</label>
+    <input type="checkbox" id="hielo">
+
+    <select id="comida">
+        <option value="Tomate atún y queso">Tomate atún y queso</option>
+        <option value="Alioli york y queso">Alioli york y queso</option>
+        <option value="Alioli lomo">Alioli lomo</option>
+        <option value="Alioli lomo y queso">Alioli lomo y queso</option>
+        <option value="Tortilla ES">Tortilla ES</option>
+        <option value="Integral de atún y queso">Integral de atún y queso</option>
+    </select>
+
+    <label for="entera">🤑</label>
+    <input type="checkbox" id="entera" name="entera">
+
+    <button onclick="agregarPedido()">Añadir</button>
+
+    <script>
+        function agregarPedido() {
+            const nombre = document.getElementById("nombre").value;
+            const bebida = document.getElementById("bebida").value;
+            const comida = document.getElementById("comida").value;
+            const hieloCheckbox = document.getElementById("hielo");
+            const enteraCheckbox = document.getElementById("entera");
+
+            const precioBebida = obtenerPrecioBebida(bebida);
+            const precioComida = obtenerPrecioComida(comida);
+            const precioExtraHielo = hieloCheckbox.checked ? 0.20 : 0;
+            const precioTotal = precioBebida + (enteraCheckbox.checked ? precioComida * 2 : precioComida) + precioExtraHielo;
+            const precioConDescuento = aplicarDescuento(precioTotal);
+
+            const pedidoTable = document.getElementById("pedido-table");
+            const newRow = pedidoTable.insertRow(-1);
+            const nombreCell = newRow.insertCell(0);
+            const bebidaCell = newRow.insertCell(1);
+            const hieloCell = newRow.insertCell(2);
+            const comidaCell = newRow.insertCell(3);
+            const enteraCell = newRow.insertCell(4);
+            const precioTotalCell = newRow.insertCell(5);
+            const precioConDescuentoCell = newRow.insertCell(6);
+
+            nombreCell.innerHTML = nombre;
+            bebidaCell.innerHTML = bebida;
+            comidaCell.innerHTML = comida;
+            hieloCell.innerHTML = hieloCheckbox.checked ? "Sí" : "No";
+            enteraCell.innerHTML = enteraCheckbox.checked ? "Sí" : "No";
+            precioTotalCell.innerHTML = precioTotal.toFixed(2) + " €";
+            precioConDescuentoCell.innerHTML = precioConDescuento.toFixed(2) + " €";
+        }
+
+        function obtenerPrecioBebida(bebida) {
+            const preciosBebidas = {
+                "Colacao": 1.30,
+                "Café con leche": 1.30,
+                "Café solo largo": 1.20,
+                "Café Americano": 1.30,
+                "Té Rojo con Leche": 1.20,
+                "Zumo de naranja": 2.50
+            };
+            return preciosBebidas[bebida] || 0;
+        }
+
+        function obtenerPrecioComida(comida) {
+            const preciosComidas = {
+                "Tomate atún y queso": 2.10,
+                "Alioli york y queso": 1.70,
+                "Alioli lomo": 2.70,
+                "Alioli lomo y queso": 2.70,
+                "Tortilla ES": 2.10,
+                "Integral de atún y queso": 2.10,
+            };
+            return preciosComidas[comida] || 0;
+        }
+
+        function aplicarDescuento(precioTotal) {
+            const descuento = 0.25;
+            return precioTotal - (precioTotal * descuento);
+        }
+    </script>
+</body>
+
+</html>
