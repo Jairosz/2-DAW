@@ -65,6 +65,7 @@
                 <th>Entera</th>
                 <th>Precio Total</th>
                 <th>Precio con Descuento</th>
+                <th>Acciones</th> 
             </tr>
         </thead>
         <tbody id="pedido-table">
@@ -106,6 +107,7 @@
     <button onclick="agregarPedido()">Añadir</button>
 
     <script>
+        let pedidoCount = 0;
         function agregarPedido() {
             const nombre = document.getElementById("nombre").value;
             const bebida = document.getElementById("bebida").value;
@@ -136,6 +138,23 @@
             enteraCell.innerHTML = enteraCheckbox.checked ? "Sí" : "No";
             precioTotalCell.innerHTML = precioTotal.toFixed(2) + " €";
             precioConDescuentoCell.innerHTML = precioConDescuento.toFixed(2) + " €";
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.innerHTML = "Eliminar";
+            eliminarBtn.addEventListener("click", function () {
+                eliminarPedido(pedidoCount);
+            });
+
+            const accionesCell = newRow.insertCell(7); // La celda para las acciones.
+            accionesCell.appendChild(eliminarBtn);
+
+            pedidoCount++;
+        }
+
+        function eliminarPedido(id) {
+            const row = document.getElementById("pedido-" + id);
+            if (row) {
+                row.remove();
+            }
         }
 
         function obtenerPrecioBebida(bebida) {
