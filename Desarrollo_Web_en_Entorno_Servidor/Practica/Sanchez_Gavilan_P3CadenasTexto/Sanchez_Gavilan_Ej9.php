@@ -8,8 +8,12 @@
 <body>
     <?php
     $cadena = "Esta es una cadena";
-    $escaped = str_replace(["e", "i", "o", "u"], ["\e", "\i", "\o", "\u"], $cadena);
-    $original = str_replace(["\e", "\i", "\o", "\u"], ["e", "i", "o", "u"], $escaped);
+    $escaped = preg_replace('/[eiou]/i', '', $cadena);
+    echo $escaped;
+    
+    $original = preg_replace('/\e|\i|\o|\u/i', 'a', $escaped);
+    echo $original;
+        
     ?>
 </body>
 </html>

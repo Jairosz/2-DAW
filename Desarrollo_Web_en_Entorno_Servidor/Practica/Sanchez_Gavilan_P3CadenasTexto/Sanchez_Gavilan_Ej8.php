@@ -7,9 +7,9 @@
 </head>
 <body>
     <?php
-    $cadena = "vamos al o'Brian";
-    $escaped = addslashes($cadena);
     $original = stripslashes($escaped);
+    echo $original;
+
     ?>
 </body>
 </html>

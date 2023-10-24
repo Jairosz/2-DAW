@@ -7,8 +7,12 @@
 </head>
 <body>
     <?php
-    $cadena = "No me gusta usar +*[] en cadenas";
-    $escaped = preg_replace('/[^a-zA-Z\s]/', '', $cadena);
+    $frase = "No me gusta usar +*[] en cadenas";
+    $escaped = preg_replace('/[^a-zA-Z\s]/', ' ', $frase);
+    echo $escaped;
+    $original = preg_replace('/\s+/', ' ', $escaped);
+    echo $original;
+        
     ?>
 </body>
 </html>
