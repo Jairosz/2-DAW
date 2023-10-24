@@ -7,8 +7,12 @@
 </head>
 <body>
     <?php
-    $original = stripslashes($escaped);
-    echo $original;
+   $cadena = "vamos al o'Brian";
+   $escaped = str_replace("'", "\'", $cadena);
+   echo $escaped;
+   $original = str_replace("\'", "'", $escaped);
+   echo $original;
+      
 
     ?>
 </body>
