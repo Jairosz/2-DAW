@@ -223,11 +223,6 @@
                 }
 
 
-                // Actualiza los elementos <p> en el HTML
-                document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
-                document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
-                document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
-
                 // Elimina la fila
                 row.remove();
             }
@@ -237,7 +232,6 @@
             // Actualiza los elementos <p> en el HTML
             document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
             document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
-            document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
 
             // Obtiene la tabla de pedidos y agrega una nueva fila con la información del pedido.
             const pedidoTable = document.getElementById("pedido-table");
