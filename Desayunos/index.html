@@ -11,21 +11,30 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Pedidos 2º DAW Maquiato</title>
     <style>
+        .blanco{
+            color: white;
+        }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
+            background-image: url("https://www.cornergas.com/wp-content/uploads/2020/05/CGA_BG_medCU_Tavern.png");
         }
 
         h1 {
             color: #FF5733;
         }
 
+        td {
+
+            background: rgba(73, 34, 12, 0.6);
+        }
+
         table {
             width: 80%;
             margin: 0 auto;
             border-collapse: collapse;
-            border: 2px solid #333;
+            border: 2px solid white;
         }
 
         table th,
@@ -63,7 +72,7 @@
             font-size: 16px;
             font-weight: bold;
             margin-top: 10px;
-            color: #333;
+            color: white;
             /* Color de texto */
         }
     </style>
@@ -128,7 +137,7 @@
 
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <p class="col-md-4 mb-0 text-muted">&copy; Jairo the GOAT</p>
+                <p class="col-md-4 mb-0 blanco">&copy; Jairo the GOAT</p>
 
                 <a href="/"
                     class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -138,10 +147,10 @@
                 </a>
 
                 <ul class="nav col-md-4 justify-content-end">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 blanco">Home</a></li>
                     <li class="nav-item"><a href="https://github.com/Jairosz"
-                            class="nav-link px-2 text-muted">GitHub</a></li>
-                    <li class="nav-item"><a href="https://es.pornhub.com" class="nav-link px-2 text-muted">GOATS</a>
+                            class="nav-link px-2 blanco ">GitHub</a></li>
+                    <li class="nav-item"><a href="https://es.pornhub.com" class="nav-link px-2 blanco">GOATS</a>
                     </li>
 
                 </ul>
@@ -244,17 +253,31 @@
             const precioConDescuentoCell = newRow.insertCell(6);
             newRow.id = "pedido-" + Date.now();
 
+            // Define una función para aplicar el estilo de color blanco al texto
+            function setWhiteText(cell) {
+                cell.style.color = "white";
+            }
+
+
+
 
 
 
             // Llena las celdas de la fila con la información del pedido.
             nombreCell.innerHTML = nombre;
+            setWhiteText(nombreCell);
             bebidaCell.innerHTML = bebida;
+            setWhiteText(bebidaCell);
             comidaCell.innerHTML = comida;
+            setWhiteText(comidaCell);
             hieloCell.innerHTML = hieloCheckbox.checked ? "Sí" : "No";
+            setWhiteText(hieloCell);
             enteraCell.innerHTML = enteraCheckbox.checked ? "Sí" : "No";
+            setWhiteText(enteraCell);
             precioTotalCell.innerHTML = precioTotal.toFixed(2) + " €";
+            setWhiteText(precioTotalCell);
             precioConDescuentoCell.innerHTML = precioConDescuento.toFixed(2) + " €";
+            setWhiteText(precioConDescuentoCell);
 
             // Crea un botón "Eliminar" para eliminar este pedido y lo agrega a la fila.
             const eliminarBtn = document.createElement("button");
@@ -309,6 +332,7 @@
             const descuento = 0.25;
             return precioTotal - (precioTotal * descuento);
         }
+
     </script>
 
 </body>
