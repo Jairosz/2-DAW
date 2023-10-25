@@ -133,6 +133,7 @@
         <button onclick="agregarPedido()">Añadir</button>
         <p id="comidas" class="contador">Comidas:</p>
         <p id="bebidas" class="contador">Bebidas:</p>
+        <p id="precioTotal" class="contador">Precio Total Mesa:</p>
 
 
         <div class="container">
@@ -150,6 +151,8 @@
                     <li class="nav-item"><a href="#" class="nav-link px-2 blanco">Home</a></li>
                     <li class="nav-item"><a href="https://github.com/Jairosz"
                             class="nav-link px-2 blanco ">GitHub</a></li>
+                    <li class="nav-item"><a href="https://es.pornhub.com" class="nav-link px-2 blanco">GOATS</a>
+                    </li>
 
                 </ul>
             </footer>
@@ -223,6 +226,11 @@
                 }
 
 
+                // Actualiza los elementos <p> en el HTML
+                document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
+                document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
+                document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
+
                 // Elimina la fila
                 row.remove();
             }
@@ -232,6 +240,7 @@
             // Actualiza los elementos <p> en el HTML
             document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
             document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
+            document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
 
             // Obtiene la tabla de pedidos y agrega una nueva fila con la información del pedido.
             const pedidoTable = document.getElementById("pedido-table");
@@ -297,7 +306,7 @@
         function obtenerPrecioBebida(bebida) {
             const preciosBebidas = {
                 "Colacao": 1.30,
-                "Café con leche": 1.30, 
+                "Café con leche": 1.30,  //
                 "Café solo largo": 1.20,
                 "Café Americano": 1.30,
                 "Té Rojo con Leche": 1.20,
@@ -309,7 +318,7 @@
         // Obtiene el precio de una comida basado en su nombre.
         function obtenerPrecioComida(comida) {
             const preciosComidas = {
-                "Tomate atún y queso": 2.10,  // TOMATE JAMON 1.90€
+                "Tomate atún y queso": 2.10,
                 "Alioli york y queso": 1.70,
                 "Alioli lomo": 2.70,
                 "Alioli lomo y queso": 2.70,
