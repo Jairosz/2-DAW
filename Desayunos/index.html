@@ -11,10 +11,11 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Pedidos 2º DAW Maquiato</title>
     <style>
-        .blanco{
+        .blanco {
             color: white;
-            
+
         }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -82,7 +83,7 @@
 <body>
     <div class="container">
         <h1>2º DAW PEDIDOS</h1>
-        <table>
+        <table id = "tabla">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -149,8 +150,8 @@
 
                 <ul class="nav col-md-4 justify-content-end">
                     <li class="nav-item"><a href="#" class="nav-link px-2 blanco">Home</a></li>
-                    <li class="nav-item"><a href="https://github.com/Jairosz"
-                            class="nav-link px-2 blanco ">GitHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/Jairosz" class="nav-link px-2 blanco ">GitHub</a>
+                    </li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 blanco">GOATS</a>
                     </li>
 
@@ -217,13 +218,7 @@
                         }
                     }
                 }
-                // Resta el precio del pedido eliminado del precio total de la mesa
-                const precioTotalCell = parseFloat(row.cells[5].textContent.replace(" €", ""));
-                precioTotalMesa -= precioTotalCell;
-                // Asegúrate de que el precio total no sea negativo
-                if (precioTotalMesa < 0) {
-                    precioTotalMesa = 0;
-                }
+
 
 
                 // Actualiza los elementos <p> en el HTML
@@ -258,11 +253,6 @@
             function setWhiteText(cell) {
                 cell.style.color = "white";
             }
-
-
-
-
-
 
             // Llena las celdas de la fila con la información del pedido.
             nombreCell.innerHTML = nombre;
@@ -306,7 +296,7 @@
         function obtenerPrecioBebida(bebida) {
             const preciosBebidas = {
                 "Colacao": 1.30,
-                "Café con leche": 1.30,  
+                "Café con leche": 1.30,
                 "Café solo largo": 1.20,
                 "Café Americano": 1.30,
                 "Té Rojo con Leche": 1.20,
@@ -333,6 +323,8 @@
             const descuento = 0.25;
             return precioTotal - (precioTotal * descuento);
         }
+
+
 
     </script>
 
