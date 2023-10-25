@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Pedidos 2º DAW Maquiato</title>
     <style>
         body {
@@ -50,79 +57,184 @@
         button:hover {
             background-color: #FF7F50;
         }
+
+        /* Estilos para los contadores */
+        .contador {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+            /* Color de texto */
+        }
     </style>
 </head>
 
 <body>
-    <h1>2º DAW PEDIDOS</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Bebidas</th>
-                <th>🧊</th>
-                <th>Comidas</th>
-                <th>Entera</th>
-                <th>Precio Total</th>
-                <th>Precio con Descuento</th>
-                <th>Acciones</th> 
-            </tr>
-        </thead>
-        <tbody id="pedido-table">
-            <!-- Aquí se añadirán dinámicamente los pedidos -->
-        </tbody>
-    </table>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <input type="text" id="nombre" placeholder="Nombre del cliente">
+    <div class="container">
+        <h1>2º DAW PEDIDOS</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Bebidas</th>
+                    <th>🧊</th>
+                    <th>Comidas</th>
+                    <th>Entera</th>
+                    <th>Precio Total</th>
+                    <th>Precio con Descuento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="pedido-table">
+                <!-- Aquí se añadirán dinámicamente los pedidos -->
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="nombre" placeholder="Nombre del cliente">
 
-    <select id="bebida">
-        <option value="Colacao">Colacao</option>
-        <option value="Café con leche">Café con leche</option>
-        <option value="Café solo largo">Café solo largo</option>
-        <option value="Café Americano">Café Americano</option>
-        <option value="Té Rojo con Leche">Té Rojo con Leche</option>
-        <option value="Zumo de naranja">Zumo de Naranja</option>
-    </select>
+        <select id="bebida">
+            <option value="Colacao">Colacao</option>
+            <option value="Café con leche">Café con leche</option>
+            <option value="Café solo largo">Café solo largo</option>
+            <option value="Café Americano">Café Americano</option>
+            <option value="Té Rojo con Leche">Té Rojo con Leche</option>
+            <option value="Zumo de naranja">Zumo de Naranja</option>
+        </select>
 
-    <label for="hielo">🧊</label>
-    <input type="checkbox" id="hielo">
+        <label for="hielo">🧊</label>
+        <input type="checkbox" id="hielo">
 
-    <select id="comida">
-        <option value="Tomate atún y queso">Tomate atún y queso</option>
-        <option value="Alioli york y queso">Alioli york y queso</option>
-        <option value="Alioli lomo">Alioli lomo</option>
-        <option value="Alioli lomo y queso">Alioli lomo y queso</option>
-        <option value="Tortilla ES">Tortilla ES</option>
-        <option value="Integral de atún y queso">Integral de atún y queso</option>
-    </select>
+        <select id="comida">
+            <option value="Tomate atún y queso">Tomate atún y queso</option>
+            <option value="Alioli york y queso">Alioli york y queso</option>
+            <option value="Alioli lomo">Alioli lomo</option>
+            <option value="Alioli lomo y queso">Alioli lomo y queso</option>
+            <option value="Tortilla ES">Tortilla ES</option>
+            <option value="Integral de atún y queso">Integral de atún y queso</option>
+        </select>
 
-    <label for="entera">🤑</label>
-    <input type="checkbox" id="entera" name="entera">
+        <label for="entera">🤑</label>
+        <input type="checkbox" id="entera" name="entera">
+        <button onclick="agregarPedido()">Añadir</button>
+        <p id="comidas" class="contador">Comidas:</p>
+        <p id="bebidas" class="contador">Bebidas:</p>
+        <p id="precioTotal" class="contador">Precio Total Mesa:</p>
 
-    <button onclick="agregarPedido()">Añadir</button>
 
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-md-4 mb-0 text-muted">&copy; Jairo the GOAT</p>
+
+                <a href="/"
+                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
+
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="https://github.com/Jairosz"
+                            class="nav-link px-2 text-muted">GitHub</a></li>
+                    <li class="nav-item"><a href="https://es.pornhub.com" class="nav-link px-2 text-muted">GOATS</a>
+                    </li>
+
+                </ul>
+            </footer>
+        </div>
+    </div>
     <script>
-        let pedidoCount = 0;
+        let pedidoCount = 0; // Declara una variable para contar el número de pedidos.
+        const comidasCount = {};
+        const bebidasCount = {};
+        let precioTotalMesa = 0;
+
+
+        // Esta función se llama cuando se hace clic en el botón "Agregar Pedido".
         function agregarPedido() {
+            // Obtiene los valores de varios elementos del formulario.
             const nombre = document.getElementById("nombre").value;
             const bebida = document.getElementById("bebida").value;
             const comida = document.getElementById("comida").value;
             const hieloCheckbox = document.getElementById("hielo");
             const enteraCheckbox = document.getElementById("entera");
+            pedidoCount++;
 
+
+            // Calcula el precio de la bebida, la comida y los extras (hielo y entera).
             const precioBebida = obtenerPrecioBebida(bebida);
             const precioComida = obtenerPrecioComida(comida);
             const precioExtraHielo = hieloCheckbox.checked ? 0.20 : 0;
             const precioTotal = precioBebida + (enteraCheckbox.checked ? precioComida * 2 : precioComida) + precioExtraHielo;
             const precioConDescuento = aplicarDescuento(precioTotal);
 
+            // Actualiza el contador de comidas y bebidas
+            if (comida in comidasCount) {
+                comidasCount[comida]++;
+            } else {
+                comidasCount[comida] = 1;
+            }
+
+            if (bebida in bebidasCount) {
+                bebidasCount[bebida]++;
+            } else {
+                bebidasCount[bebida] = 1;
+            }
+            // Esta función se llama para eliminar un pedido por su ID.
+            function eliminarPedido(id) {
+                const row = document.getElementById(id);
+                if (row) {
+                    const comidaCell = row.cells[3].textContent; // Obtiene el nombre de la comida de la fila
+                    const bebidaCell = row.cells[1].textContent; // Obtiene el nombre de la bebida de la fila
+
+                    // Resta la comida y bebida eliminadas de los contadores
+                    if (comidaCell in comidasCount) {
+                        comidasCount[comidaCell]--;
+                        if (comidasCount[comidaCell] === 0) {
+                            delete comidasCount[comidaCell]; // Elimina el tipo de comida si el contador llega a 0
+                        }
+                    }
+
+                    if (bebidaCell in bebidasCount) {
+                        bebidasCount[bebidaCell]--;
+                        if (bebidasCount[bebidaCell] === 0) {
+                            delete bebidasCount[bebidaCell]; // Elimina el tipo de bebida si el contador llega a 0
+                        }
+                    }
+                }
+                // Resta el precio del pedido eliminado del precio total de la mesa
+                const precioTotalCell = parseFloat(row.cells[5].textContent.replace(" €", ""));
+                precioTotalMesa -= precioTotalCell;
+                // Asegúrate de que el precio total no sea negativo
+                if (precioTotalMesa < 0) {
+                    precioTotalMesa = 0;
+                }
+
+
+                // Actualiza los elementos <p> en el HTML
+                document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
+                document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
+                document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
+
+                // Elimina la fila
+                row.remove();
+            }
+            // Actualiza el precio total de la mesa
+            precioTotalMesa += precioConDescuento;
+
+            // Actualiza los elementos <p> en el HTML
+            document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
+            document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
+            document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
+
+            // Obtiene la tabla de pedidos y agrega una nueva fila con la información del pedido.
             const pedidoTable = document.getElementById("pedido-table");
-            const newRow = pedidoTable.insertRow(-1);
+            const newRow = pedidoTable.insertRow(-1); // -1 inserta la fila al final.
             const nombreCell = newRow.insertCell(0);
             const bebidaCell = newRow.insertCell(1);
             const hieloCell = newRow.insertCell(2);
@@ -130,7 +242,12 @@
             const enteraCell = newRow.insertCell(4);
             const precioTotalCell = newRow.insertCell(5);
             const precioConDescuentoCell = newRow.insertCell(6);
+            newRow.id = "pedido-" + Date.now();
 
+
+
+
+            // Llena las celdas de la fila con la información del pedido.
             nombreCell.innerHTML = nombre;
             bebidaCell.innerHTML = bebida;
             comidaCell.innerHTML = comida;
@@ -138,25 +255,30 @@
             enteraCell.innerHTML = enteraCheckbox.checked ? "Sí" : "No";
             precioTotalCell.innerHTML = precioTotal.toFixed(2) + " €";
             precioConDescuentoCell.innerHTML = precioConDescuento.toFixed(2) + " €";
+
+            // Crea un botón "Eliminar" para eliminar este pedido y lo agrega a la fila.
             const eliminarBtn = document.createElement("button");
             eliminarBtn.innerHTML = "Eliminar";
             eliminarBtn.addEventListener("click", function () {
-                eliminarPedido(pedidoCount);
+                eliminarPedido(newRow.id);
             });
 
-            const accionesCell = newRow.insertCell(7); // La celda para las acciones.
+            // Agrega el botón de eliminar a la celda de acciones.
+            const accionesCell = newRow.insertCell(7);
             accionesCell.appendChild(eliminarBtn);
 
-            pedidoCount++;
         }
 
+        // Esta función se llama para eliminar un pedido por su ID.
         function eliminarPedido(id) {
-            const row = document.getElementById("pedido-" + id);
+            const row = document.getElementById(id);
             if (row) {
                 row.remove();
             }
         }
 
+
+        // Obtiene el precio de una bebida basado en su nombre.
         function obtenerPrecioBebida(bebida) {
             const preciosBebidas = {
                 "Colacao": 1.30,
@@ -166,26 +288,29 @@
                 "Té Rojo con Leche": 1.20,
                 "Zumo de naranja": 2.50
             };
-            return preciosBebidas[bebida] || 0;
+            return preciosBebidas[bebida]; // Devuelve el precio de la bebida o cero si no se encuentra en la lista.
         }
 
+        // Obtiene el precio de una comida basado en su nombre.
         function obtenerPrecioComida(comida) {
             const preciosComidas = {
                 "Tomate atún y queso": 2.10,
                 "Alioli york y queso": 1.70,
                 "Alioli lomo": 2.70,
                 "Alioli lomo y queso": 2.70,
-                "Tortilla ES": 2.10,
+                "Tortilla española": 2.10,
                 "Integral de atún y queso": 2.10,
             };
-            return preciosComidas[comida] || 0;
+            return preciosComidas[comida]; // Devuelve el precio de la comida o cero si no se encuentra en la lista.
         }
 
+        // Aplica un descuento del 25% al precio total.
         function aplicarDescuento(precioTotal) {
             const descuento = 0.25;
             return precioTotal - (precioTotal * descuento);
         }
     </script>
+
 </body>
 
 </html>
