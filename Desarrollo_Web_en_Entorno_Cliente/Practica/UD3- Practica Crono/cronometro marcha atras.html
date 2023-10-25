@@ -24,6 +24,9 @@
         color:dodgerblue;
         text-align: center;
     }
+    #controls{
+        text-align: center;
+    }
 </style>
 <script>
     var segundos = 0;
@@ -31,6 +34,7 @@
     var llamada;
     var ceromin='';
     var ceroseg='';
+    var isRunning = true;
    
     function cuentaAtras(){
         devolvercero(minutos,segundos);
@@ -38,36 +42,59 @@
         document.getElementById("reloj").innerHTML=ceromin+minutos+':'+ceroseg+segundos;
          if (minutos ===0 && segundos ===0){
             alert ("Se agotó su tiempo");
-            clearTimeOut(llamada);
+            clearInterval(llamada);
         }
         if (segundos ==0){
             minutos --;
             segundos+=60;   
         }   
-        segundos --;
-        var llamada = setTimeout(cuentaAtras,1000);
+        if (isRunning) {
+            segundos --;
+            llamada = setTimeout(cuentaAtras,1000);
+        }
     }
-   
+
+    function startCountdown() {
+        isRunning = true;
+        cuentaAtras();
+    }
+
+    function stopCountdown() {
+        isRunning = false;
+        clearTimeout(llamada);
+    }
+
+    function resetCountdown() {
+        isRunning = false;
+        minutos = parseInt(document.getElementById("minutosInput").value) || 0;
+        segundos = parseInt(document.getElementById("segundosInput").value) || 0;
+        devolvercero(minutos, segundos);
+        document.getElementById("reloj").innerHTML=ceromin+minutos+':'+ceroseg+segundos;
+    }
+
     function devolvercero(minutos,segundos){
         if (minutos<10){
             ceromin='0';
-           
         }
         if (segundos<10){
             ceroseg='0';
-           
         }else {
             ceroseg='';
         }
-         return ceroseg;return ceromin;
     }
-   
 </script>
 </head>
-<body onload="cuentaAtras()">
+<body>
    <div id="ventana">
        <div id="reloj">
            
+       </div>
+       <div id="controls">
+           <button onclick="startCountdown()">Iniciar</button>
+           <button onclick="stopCountdown()">Detener</button>
+           <input type="number" id="minutosInput" placeholder="Minutos">
+           <input type="number" id="segundosInput" placeholder="Segundos">
+           <button onclick="resetCountdown()">Reiniciar</button>
        </div>
    </div>
 </body>
