@@ -83,7 +83,7 @@
 <body>
     <div class="container">
         <h1>2º DAW PEDIDOS</h1>
-        <table id = "tabla">
+        <table id="tabla">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -114,7 +114,9 @@
             <option value="Café solo largo">Café solo largo</option>
             <option value="Café Americano">Café Americano</option>
             <option value="Té Rojo con Leche">Té Rojo con Leche</option>
-            <option value="Zumo de naranja">Zumo de Naranja</option>
+            <option value="Té Negro con Leche">Té Negro con Leche</option>
+            <option value="Fanta de Naranja">Fanta de Naranja</option>
+            <option value="CocaCola">CocaCola</option>
         </select>
 
         <label for="hielo">🧊</label>
@@ -125,8 +127,11 @@
             <option value="Alioli york y queso">Alioli york y queso</option>
             <option value="Alioli lomo">Alioli lomo</option>
             <option value="Alioli lomo y queso">Alioli lomo y queso</option>
-            <option value="Tortilla ES">Tortilla ES</option>
+            <option value="Tortilla española">Tortilla española</option>
             <option value="Integral de atún y queso">Integral de atún y queso</option>
+            <option value="Tomate y atún">Tomate y atún</option>
+            <option value="Jamón serrano">Jamón serrano</option>
+            <option value="Pollo maquiato">Pollo maquiato</option>
         </select>
 
         <label for="entera">🤑</label>
@@ -161,8 +166,8 @@
     </div>
     <script>
         let pedidoCount = 0; // Declara una variable para contar el número de pedidos.
-        const comidasCount = {};
-        const bebidasCount = {};
+        var comidasCount = {};
+        var bebidasCount = {};
         let precioTotalMesa = 0;
 
 
@@ -196,46 +201,63 @@
             } else {
                 bebidasCount[bebida] = 1;
             }
+            // Actualiza el contador de comidas y bebidas en el HTML
+            function actualizarContadores() {
+                const comidasContador = document.getElementById("comidas");
+                const bebidasContador = document.getElementById("bebidas");
+                const comidasStr = Object.keys(comidasCount)
+                    .map(comida => `${comida}: ${comidasCount[comida]}`)
+                    .join(", ");
+                const bebidasStr = Object.keys(bebidasCount)
+                    .map(bebida => `${bebida}: ${bebidasCount[bebida]}`)
+                    .join(", ");
+                comidasContador.textContent = "Comidas: " + comidasStr;
+                bebidasContador.textContent = "Bebidas: " + bebidasStr;
+            }
+            // Llama a esta función siempre que se actualice un contador
+            actualizarContadores();
+
+
             // Esta función se llama para eliminar un pedido por su ID.
             function eliminarPedido(id) {
                 const row = document.getElementById(id);
                 if (row) {
-                    const comidaCell = row.cells[3].textContent; // Obtiene el nombre de la comida de la fila
-                    const bebidaCell = row.cells[1].textContent; // Obtiene el nombre de la bebida de la fila
+                    const comida = row.cells[3].textContent; // Obtiene el nombre de la comida de la fila
+                    const bebida = row.cells[1].textContent; // Obtiene el nombre de la bebida de la fila
 
-                    // Resta la comida y bebida eliminadas de los contadores
-                    if (comidaCell in comidasCount) {
-                        comidasCount[comidaCell]--;
-                        if (comidasCount[comidaCell] === 0) {
-                            delete comidasCount[comidaCell]; // Elimina el tipo de comida si el contador llega a 0
+                    if (comida in comidasCount) {
+                        comidasCount[comida]--;
+                        if (comidasCount[comida] <= 0) {
+                            delete comidasCount[comida]; // Elimina la entrada si el contador llega a cero o menos
                         }
                     }
 
-                    if (bebidaCell in bebidasCount) {
-                        bebidasCount[bebidaCell]--;
-                        if (bebidasCount[bebidaCell] === 0) {
-                            delete bebidasCount[bebidaCell]; // Elimina el tipo de bebida si el contador llega a 0
+                    if (bebida in bebidasCount) {
+                        bebidasCount[bebida]--;
+                        if (bebidasCount[bebida] <= 0) {
+                            delete bebidasCount[bebida]; // Elimina la entrada si el contador llega a cero o menos
                         }
                     }
                 }
 
+                // Resta el precio del pedido eliminado del precio total de la mesa
+                const precioTotalCell = parseFloat(row.cells[5].textContent.replace(" €", ""));
+                precioTotalMesa -= precioTotalCell;
 
-
-                // Actualiza los elementos <p> en el HTML
-                document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
-                document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
-                document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
+                // Asegúrate de que el precio total no sea negativo
+                if (precioTotalMesa < 0) {
+                    precioTotalMesa = 0;
+                }
 
                 // Elimina la fila
                 row.remove();
             }
+
             // Actualiza el precio total de la mesa
             precioTotalMesa += precioConDescuento;
 
-            // Actualiza los elementos <p> en el HTML
-            document.getElementById("comidas").textContent = "Comidas: " + JSON.stringify(comidasCount);
-            document.getElementById("bebidas").textContent = "Bebidas: " + JSON.stringify(bebidasCount);
-            document.getElementById("precioTotal").textContent = "Precio Total Mesa: " + precioTotalMesa.toFixed(2) + " €";
+
+
 
             // Obtiene la tabla de pedidos y agrega una nueva fila con la información del pedido.
             const pedidoTable = document.getElementById("pedido-table");
@@ -300,7 +322,10 @@
                 "Café solo largo": 1.20,
                 "Café Americano": 1.30,
                 "Té Rojo con Leche": 1.20,
-                "Zumo de naranja": 2.50
+                "Zumo de naranja": 2.50,
+                "Té Negro con Leche": 1.20,
+                "Fanta de Naranja": 2.00,
+                "CocaCola": 2.00,
             };
             return preciosBebidas[bebida]; // Devuelve el precio de la bebida o cero si no se encuentra en la lista.
         }
@@ -310,10 +335,13 @@
             const preciosComidas = {
                 "Tomate atún y queso": 2.10,
                 "Alioli york y queso": 1.70,
-                "Alioli lomo": 2.70,
+                "Alioli lomo": 2.20,
                 "Alioli lomo y queso": 2.70,
                 "Tortilla española": 2.10,
                 "Integral de atún y queso": 2.10,
+                "Tomate y atún ": 2.10,
+                "Jamón serrano": 1.70,
+                "Pollo maquiato": 2.70,
             };
             return preciosComidas[comida]; // Devuelve el precio de la comida o cero si no se encuentra en la lista.
         }
