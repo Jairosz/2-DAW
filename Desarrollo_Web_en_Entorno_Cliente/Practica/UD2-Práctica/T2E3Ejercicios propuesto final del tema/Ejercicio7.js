@@ -7,4 +7,9 @@ function mostrarEnunciado1() {
     solucion.classList.remove("esconder");
     btn.remove();
 
-  }
+    alert(Number("9 9"));  // Resultado: NaN (No es un número)
+    alert(Number("dos"));  // Resultado: NaN (No es un número)
+
+    solucion.innerHTML = ("el resultado es NaN");
+
+}

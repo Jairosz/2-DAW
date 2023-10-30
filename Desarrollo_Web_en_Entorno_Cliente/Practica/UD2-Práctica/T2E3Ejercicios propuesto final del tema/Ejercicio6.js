@@ -7,4 +7,15 @@ function mostrarEnunciado1() {
     solucion.classList.remove("esconder");
     btn.remove();
 
-  }
+    
+
+}
+  function mousePasoEncima() {
+    document.getElementById("resultado").innerHTML = "¡El ratón pasó por encima!";
+}
+function mouseSalio() {
+    document.getElementById("resultado").innerHTML = "¡El ratón salió!";
+}
+function inputPerdioFoco() {
+    document.getElementById("resultado").innerHTML = "El campo de entrada perdió el foco.";
+}

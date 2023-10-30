@@ -6,5 +6,22 @@ function mostrarEnunciado1() {
     enunciado.classList.remove("esconder");
     solucion.classList.remove("esconder");
     btn.remove();
+    // Variable global
+    var mensaje = "Hola, soy una variable global";
 
-  }
+    function mostrarMensaje() {
+        // Accede a la variable global y la sobreescribe
+        mensaje = "Este es el mensaje modificado";
+    }
+
+    // Muestra el mensaje original
+    alert(mensaje);
+
+    // Llama a la función que sobreescribe la variable global
+    mostrarMensaje();
+
+    // Muestra la variable global modificada
+    alert(mensaje);
+
+
+}
