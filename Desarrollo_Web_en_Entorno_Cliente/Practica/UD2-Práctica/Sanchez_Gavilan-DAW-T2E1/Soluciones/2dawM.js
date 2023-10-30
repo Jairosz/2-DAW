@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contador de Números</title>
-</head>
-<body>
-    <h1>Contador de Números</h1>
-
-    <script>
         // Declaración de variables
         var numeros = [];   // Un array para almacenar los números ingresados.
         var numero;         // Variable para almacenar el número ingresado en cada iteración.
@@ -36,7 +27,3 @@
 
         // Mostrar una alerta con el número de números válidos ingresados (excluyendo el 9999)
         alert("Número de números introducidos (excluyendo el 9999): " + contador);
-    </script>
-</body>
-
-</html>

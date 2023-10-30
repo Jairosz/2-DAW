@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contador y Suma de Números</title>
-</head>
-<h1>Contador y Suma de Números</h1>
-
-<script>
     // Declaración de variables
     var numeros = [];   // Un array para almacenar los números ingresados.
     var numero;         // Variable para almacenar el número ingresado en cada iteración.
@@ -40,6 +32,3 @@
     alert("Número de números introducidos (excluyendo el 9999): " + contador);
     // Mostrar una alerta con la suma de los números válidos ingresados (excluyendo el 9999)
     alert("Suma de los números introducidos (excluyendo el 9999): " + suma);
-</script>
-
-</html>
