@@ -1,0 +1,735 @@
+:root {
+    --hover-main-background-color: black;
+    --hover-text-color: white;
+    --main-text-color: white;
+}
+
+/* Añadir Rise UP en sub Textos
+ Fixear Hamburguer Menu
+ Añadir mas sections
+ Añadir Rise up en imagenes
+ Añadir Sombras en imagenes   "box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);"
+ Añadir Carrusel
+
+*/
+
+@keyframes fall-in {
+
+    /*Animacion Caída desde el top (Texto Main) */
+    0% {
+        top: -50%;
+
+        opacity: 0;
+
+    }
+
+    100% {
+        top: 50%;
+
+        opacity: 1;
+
+    }
+}
+
+@keyframes rise-up1 {
+
+    /*Animacion Subida desde el bottom PARA 992px/1200px */
+    0% {
+        transform: translate(-10%, 140%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-10%, 40%);
+        opacity: 1;
+    }
+}
+
+@keyframes rise-up2 {
+
+    /*Animacion Subida desde el bottom PARA res MOVIL y 576px */
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: -50%;
+        opacity: 1;
+    }
+}
+
+@keyframes rise-up3 {
+
+    /*Animacion Subida para texto*/
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 80%;
+        opacity: 1;
+    }
+}
+
+@keyframes rise-up4 {
+
+    /*Animacion Subida para texto responsive*/
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 70%;
+        opacity: 1;
+    }
+}
+
+@keyframes rise-up5 {
+
+    /*Animacion Subida para texto responsive*/
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+* {
+    box-sizing: content-box;
+}
+
+/* .imgCarousel {
+    height: 600px;
+}  */
+.aspectRatio1 {
+    display: block;
+    aspect-ratio: 1021 / 575;
+}
+
+/* .background-color-carousel {
+    background-color: rgb(33, 37, 44);
+} */
+
+.nav-logo {
+    width: 86px;
+    height: 70px;
+    margin-left: 1vw;
+}
+
+ul {
+    margin: 1vh;
+}
+
+.nav-link:hover {
+    color: rgb(227, 163, 39);
+}
+
+.banner {
+    display: flex;
+}
+
+.nav-item-separation {
+    margin-left: 2.5vw;
+}
+
+.row>* {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.banner-color {
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-item-color {
+    color: rgb(43, 50, 61);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.text {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--main-text-color);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    animation: fall-in 1.5s ease both;
+}
+
+.subtext {
+    position: absolute;
+    font-size: 1rem;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.376);
+    text-align: center;
+    animation: raise-up3 1.5s ease both;
+
+}
+
+.imagen-main {
+    background-image: url('https://res.cloudinary.com/mcfit/image/upload/q_auto,f_auto/v1697030558/McFIT%20Kampagnen/2023_Mega-Deal/ES/McFIT_ES_MegaDeal_Media-Stage_Mobile_1080x2565');
+    height: 89vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.9);
+}
+
+header {
+    position: relative;
+    height: 11vh;
+    z-index: 1;
+}
+
+.inscripcion {
+    margin-left: 15vw;
+    text-align: center;
+    background: #ffdd03;
+    border-radius: 3px;
+    height: 48px;
+    padding: 13px 32px;
+    line-height: 1.4;
+    box-shadow: 0 2px 14px -8px rgba(0, 0, 0, 0.7);
+    margin-right: 1rem;
+}
+
+.inscripcion:hover {
+    background-color: var(--hover-main-background-color)
+}
+
+.inscripcion:hover a {
+    color: white;
+}
+
+.submain1 {
+    background-color: rgb(63, 77, 90);
+    height: 30vh;
+}
+
+.submain2 {
+    background-color: rgb(white);
+    height: 50vh;
+}
+
+.display {
+    display: flex;
+}
+
+.img1 {
+    max-width: 100%;
+    aspect-ratio: 341 / 343;
+    position: relative;
+    top: -50%;
+    left: 10%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    animation: rise-up2 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.img2 {
+    max-width: 100%;
+    height: 35vh;
+    width: 80vw;
+    position: relative;
+    top: 20%;
+    left: 10%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    /*animation: rise-up5 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards; */
+}
+
+
+/* .programa {
+    position: absolute;
+    width: 80vw;
+    top: 125%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+} */
+
+.texto1 {
+    color: #33414f;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+    font-size: 100%;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.texto2 {
+    font-size: 14px;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+    color: #33414f;
+    line-height: 1.4em;
+}
+
+.titulo {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: normal;
+    text-align: center;
+    margin-bottom: 2vh;
+
+}
+
+.boton {
+    color: rgb(43, 50, 61);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    background: #ffdd03;
+    border-radius: 3px;
+    height: 48px;
+    padding: 13px 32px;
+    line-height: 1.4;
+    box-shadow: 0 2px 14px -8px rgba(0, 0, 0, 0.7);
+    margin-right: 1rem;
+
+}
+
+.boton:hover {
+    background-color: var(--hover-main-background-color) !important;
+    color: var(--hover-text-color) !important;
+}
+
+
+@media (min-width: 576px) {
+    /* .programa {
+        position: absolute;
+        width: 80vw;
+        top: 125%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    } */
+
+    .texto1 {
+        color: #33414f;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        font-size: 100%;
+        line-height: 26px;
+        font-weight: bold;
+    }
+
+    .texto2 {
+        font-size: 14px;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        color: #33414f;
+        line-height: 1.4em;
+    }
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: normal;
+        text-align: center;
+        margin-bottom: 2vh;
+
+    }
+
+    .img1 {
+        max-width: 100%;
+        aspect-ratio: 341 / 343;
+        position: relative;
+        top: -50%;
+        left: 20%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        animation: rise-up2 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .text {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--main-text-color);
+        font-family: sans-serif;
+        font-size: 4.1rem;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+
+
+    }
+
+    .imagen-main {
+        background-image: url('https://res.cloudinary.com/mcfit/image/upload/q_auto:best,f_auto,dpr_2/v1697030559/McFIT%20Kampagnen/2023_Mega-Deal/ES/McFIT_ES_MegaDeal_Media-Stage_Desktop_1920x1080');
+        height: 89vh;
+        background-position: 80% 50%;
+    }
+
+    .inscripcion {
+        margin-left: 15vw;
+        text-align: center;
+        background: #ffdd03;
+        border-radius: 3px;
+        height: 48px;
+        padding: 13px 32px;
+        line-height: 1.4;
+        box-shadow: 0 2px 14px -8px rgba(0, 0, 0, 0.7);
+        margin-right: 1rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .boton1 {
+        margin-top: 5vh;
+        margin-left: 5vw;
+    }
+
+    /* .programa {
+        position: absolute;
+        width: 45vw;
+        top: 90%;
+        left: 25%;
+        transform: translate(-50%, 50%);
+    } */
+
+    .texto1 {
+        color: #33414f;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        font-size: 100%;
+        line-height: 26px;
+        font-weight: bold;
+    }
+
+    .texto2 {
+        font-size: 14px;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        color: #33414f;
+        line-height: 1.4em;
+    }
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: normal;
+        text-align: center;
+        margin-bottom: 2vh;
+
+    }
+
+    .imagen-main {
+        background-image: url('https://res.cloudinary.com/mcfit/image/upload/q_auto:best,f_auto,dpr_2/v1697030559/McFIT%20Kampagnen/2023_Mega-Deal/ES/McFIT_ES_MegaDeal_Media-Stage_Desktop_1920x1080');
+        height: 89vh;
+    }
+
+    .text {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--main-text-color);
+        font-family: sans-serif;
+        font-size: 5.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+
+    }
+
+    .subtext {
+        position: absolute;
+        font-size: 2rem;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.376);
+        text-align: center;
+        animation: rise-up4 1s ease-in-out;
+
+    }
+
+    .banner ul {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .inscripcion {
+        height: fit-content;
+        margin-left: 2vw;
+
+    }
+
+    .display {
+        display: flex;
+    }
+
+    .submain1 {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .submain2 {
+        background-color: rgb(61, 74, 87);
+        height: 60vh;
+    }
+
+    .img1 {
+        max-width: 100%;
+        aspect-ratio: 341 / 343;
+        position: relative;
+        top: 10%;
+        left: -20%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        animation: rise-up1 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+}
+
+@media (min-width: 992px) {
+    .submain1 {
+        background-color: white;
+        height: 70vh;
+    }
+
+    .submain2 {
+        background-color: rgb(61, 74, 87);
+        height: 70vh;
+    }
+
+    .inscripcion {
+        height: fit-content;
+        margin-left: 15vw;
+    }
+
+    .img1 {
+        max-width: 100%;
+        aspect-ratio: 341 / 343;
+        position: relative;
+        top: 10%;
+        left: -20%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        animation: rise-up1 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    /* .programa {
+        position: absolute;
+        width: 45vw;
+        top: 75%;
+        left: 25%;
+        transform: translate(-50%, 50%);
+    } */
+
+    .texto1 {
+        color: #33414f;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: bold;
+    }
+
+    .texto2 {
+        font-size: 20px;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        color: #33414f;
+        line-height: 1.4em;
+    }
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: 34px;
+        font-weight: 900;
+        letter-spacing: normal;
+        text-align: center;
+        margin-bottom: 2vh;
+
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .submain1 {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .submain2 {
+        background-color: rgb(61, 74, 87);
+        height: 60vh;
+    }
+
+    .submain4 {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .submain5 {
+        background-color: rgb(61, 74, 87);
+        height: 60vh;
+    }
+
+
+    .inscripcion {
+        height: fit-content;
+        margin-left: 15vw;
+    }
+
+    .img1 {
+        max-width: 100%;
+        aspect-ratio: 341 / 343;
+        position: relative;
+        top: 10%;
+        left: -10%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        animation: rise-up1 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .img2 {
+        max-width: 100%;
+        height: 35vh;
+        width: 80vw;
+        position: relative;
+        top: 20%;
+        left: 10%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        animation: rise-up5 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    /* .programa {
+        position: absolute;
+        width: 45vw;
+        top: 79%;
+        left: 25%;
+        transform: translate(-50%, 50%);
+    } */
+
+    .texto1 {
+        color: #33414f;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: bold;
+    }
+
+    .texto2 {
+        font-size: 20px;
+        font-family: Arial, "Helvetica Neue", sans-serif;
+        color: #33414f;
+        line-height: 1.4em;
+    }
+
+    .titulo {
+        margin-top: 3vh;
+        position: relative;
+        left: 0%;
+        font-family: sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: normal;
+        text-align: center;
+        margin-bottom: 2vh;
+        width: 50vw;
+
+    }
+
+    .tituloInverso {
+        margin-top: 3vh;
+        position: relative;
+        left: 0%;
+        font-family: sans-serif;
+        font-size: 50px;
+        font-weight: 900;
+        letter-spacing: normal;
+        text-align: center;
+        margin-bottom: 2vh;
+        width: 60vw;
+
+    }
+
+    .textoComp {
+        width: 40vw;
+        position: relative;
+        left: 15%;
+    }
+
+}
+
+.carousel-item {
+    height: 580px;
+}
+
+.carousel-item img {
+    display: block;
+    height: 100%;
+    margin-inline: auto;
+}
+
+.submain3 {
+    background-color: rgb(33, 37, 44);
+    width: 100%;
+}
+
+.rework__submain1 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 100vw;
+    box-sizing: content-box;
+    overflow-y: hidden;
+}
+
+.rework__submain1>.programa {
+    padding-inline: 4rem;
+    padding-block: 1.5rem;
+}
+
+.rework__submain1>.image-container {
+    height: 100%;
+    background-color: rgb(43, 50, 61);
+    position: relative;
+}
+
+.image-container img {
+    display: block;
+    margin-block: auto;
+    height: 280px;
+    position: absolute;
+    transform: translate(-10%, 40%);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    animation: rise-up1 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
