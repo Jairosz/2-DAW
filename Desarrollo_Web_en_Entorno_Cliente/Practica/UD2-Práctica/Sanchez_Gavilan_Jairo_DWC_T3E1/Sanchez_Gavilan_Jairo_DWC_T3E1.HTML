@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jairo Sánchez Gavilán</title>
+    <style>
+        body {
+        }
+
+        #ventana {
+            margin: auto;
+            display: block;
+            position: absolute;
+            height: 200px;
+            width: 400px;
+            background: pink;
+            border: solid 1px black;
+        }
+
+        #reloj {
+            position: absolute;
+            top: 40px;
+            left: 120px;
+            font-size: 80px;
+            color: dodgerblue;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var horas = 0;
+        var minutos = 0;
+        var segundos = 0;
+        var llamada;
+        var cerohora = '';
+        var ceromin = '';
+        var ceroseg = '';
+
+        function iniciarCuentaAtras() {
+            horas = parseInt(document.getElementById("inputHoras").value) || 0;
+            minutos = parseInt(document.getElementById("inputMinutos").value) || 0;
+            segundos = parseInt(document.getElementById("inputSegundos").value) || 0;
+            devolverCero(horas, minutos, segundos);
+            document.getElementById("reloj").innerHTML = cerohora + horas + ':' + ceromin + minutos + ':' + ceroseg + segundos;
+            llamada = setTimeout(cuentaAtras, 1000);
+        }
+
+        function cuentaAtras() {
+            devolverCero(horas, minutos, segundos);
+            if (horas === 0 && minutos === 0 && segundos === 0) {
+                alert("Se agotó su tiempo");
+                clearTimeout(llamada);
+            } else {
+                if (segundos === 0) {
+                    if (minutos === 0) {
+                        horas--;
+                        minutos = 59;
+                        segundos = 59;
+                    } else {
+                        minutos--;
+                        segundos = 59;
+                    }
+                } else {
+                    segundos--;
+                }
+
+                document.getElementById("reloj").innerHTML = cerohora + horas + ':' + ceromin + minutos + ':' + ceroseg + segundos;
+                llamada = setTimeout(cuentaAtras, 1000);
+            }
+        }
+
+        function devolverCero(horas, minutos, segundos) {
+            cerohora = horas < 10 ? '0' : '';
+            ceromin = minutos < 10 ? '0' : '';
+            ceroseg = segundos < 10 ? '0' : '';
+        }
+
+        function pararCuentaAtras() {
+            clearTimeout(llamada);
+        }
+
+        function reiniciarCuentaAtras() {
+            pararCuentaAtras();
+            iniciarCuentaAtras();
+        }
+    </script>
+</head>
+<body>
+    <div id="ventana">
+        <div id="reloj"></div>
+        <input type="number" id="inputHoras" placeholder="Horas">
+        <input type="number" id="inputMinutos" placeholder="Minutos">
+        <input type="number" id="inputSegundos" placeholder="Segundos">
+        <button onclick="iniciarCuentaAtras()">Iniciar</button>
+        <button onclick="pararCuentaAtras()">Parar</button>
+        <button onclick="reiniciarCuentaAtras()">Reiniciar</button>
+    </div>
+</body>
+</html>
