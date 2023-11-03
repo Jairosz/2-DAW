@@ -1,0 +1,91 @@
+div {
+    width: 600px;
+    height: 600px;
+    font-size: 30px;
+    border: solid 2px black;
+    margin: 0;
+    background-image: url(https://previews.123rf.com/images/liewluck/liewluck1012/liewluck101200016/8364244-campo-de-f%C3%BAtbol-de-c%C3%A9sped-artificial-para-fondo.jpg);
+    background-size: cover;
+    position: relative;
+  }
+  
+  .iniesta,
+  .puyol,
+  .villa,
+  .busquets {
+    border: 0px;
+    width: 150px; 
+    height: 150px; 
+    background-size: cover;
+    position: absolute;
+  }
+  
+  .iniesta {
+    background-image: url(https://e00-marca.uecdn.es/deporte/futbol/mundial/imagenes/jugadores/laRoja/iniesta.png);
+    top: 0;
+    left: 0;
+  }
+  
+  .puyol {
+    background-image: url(https://efootballhub.net/images/efootball23/players/87963077840313_l.png);
+    top: 0;
+    right: 0;
+  }
+  
+  .villa {
+    background-image: url(https://e00-marca.uecdn.es/deporte/futbol/mundial/imagenes/jugadores/laRoja/villa.png);
+    bottom: 0;
+    left: 0;
+  }
+  
+  .busquets {
+    background-image: url(https://e00-marca.uecdn.es/deporte/futbol/mundial/imagenes/jugadores/laRoja/busquets.png);
+    bottom: 0;
+    right: 0;
+  }
+  
+  .bola {
+    border: 0px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url(https://banner2.cleanpng.com/20180408/efw/kisspng-2014-fifa-world-cup-brazil-2010-fifa-world-cup-198-football-5aca485ebb72a0.0825655415232062387678.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: mover 4s linear infinite, rotar 0.5s linear infinite;
+  }
+  
+  @keyframes mover {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: 500px;
+    }
+    50% {
+      top: 500px;
+      left: 500px;
+    }
+    75% {
+      top: 500px;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+  
+  @keyframes rotar {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
