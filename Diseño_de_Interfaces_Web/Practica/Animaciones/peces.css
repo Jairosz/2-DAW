@@ -34,7 +34,7 @@ body {
     position: absolute;
     top: 30%;
     left: 95%;
-    animation: arenita 10s;
+    animation: arenita 1s;
     animation-iteration-count: infinite;
 }
 .balonarenita{
@@ -46,7 +46,7 @@ body {
     position: absolute;
     top: 30%;
     left: 92%;
-    animation: balonarenita 10s;
+    animation: balonarenita 1s;
     animation-iteration-count: infinite;
 }
 
@@ -70,7 +70,7 @@ body {
     position: absolute;
     top: 80%;
     left: 7%;
-    animation: notaSubir 5s;
+    animation: notaSubir 1s;
     animation-iteration-count: infinite;
 }
 
@@ -83,7 +83,7 @@ body {
     position: absolute;
     top: 80%;
     left: 7%;
-    animation: notaSubir 10s;
+    animation: notaSubir 0.5s;
     animation-iteration-count: infinite;
 
 }
@@ -97,7 +97,7 @@ body {
     position: absolute;
     top: 80%;
     left: 7%;
-    animation: notaSubir 20s;
+    animation: notaSubir 0.4s;
     animation-iteration-count: infinite;
 
 }
@@ -111,7 +111,7 @@ body {
     position: absolute;
     top: 80%;
     left: 7%;
-    animation: notaSubir 30s;
+    animation: notaSubir 0.8s;
     animation-iteration-count: infinite;
 
 }
@@ -125,7 +125,7 @@ body {
     position: absolute;
     top: 80%;
     left: 7%;
-    animation: notaSubir 40s;
+    animation: notaSubir 0.6s;
     animation-iteration-count: infinite;
 
 }
@@ -139,7 +139,7 @@ body {
     position: absolute;
     top: 70%;
     left: 10%;
-    animation: notaSubir 5s;
+    animation: notaSubir 1s;
     animation-iteration-count: infinite;
 
 
@@ -154,7 +154,7 @@ body {
     position: absolute;
     top: 70%;
     left: 10%;
-    animation: notaSubir 10s;
+    animation: notaSubir 0.9s;
     animation-iteration-count: infinite;
 
 
@@ -169,7 +169,7 @@ body {
     position: absolute;
     top: 70%;
     left: 10%;
-    animation: notaSubir 20s;
+    animation: notaSubir 0.6s;
     animation-iteration-count: infinite;
 
 
@@ -184,7 +184,7 @@ body {
     position: absolute;
     top: 70%;
     left: 10%;
-    animation: notaSubir 30s;
+    animation: notaSubir 0.3s;
     animation-iteration-count: infinite;
 
 
@@ -198,7 +198,7 @@ body {
     position: absolute;
     top: 70%;
     left: 10%;
-    animation: notaSubir 40s;
+    animation: notaSubir 0.5s;
     animation-iteration-count: infinite;
 
 }
