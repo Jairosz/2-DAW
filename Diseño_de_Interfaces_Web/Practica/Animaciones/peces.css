@@ -1,0 +1,235 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/64/dd/41/64dd41a50bbb655cec46bc3104db54fb.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bob {
+    background-image: url(https://assets.stickpng.com/images/5874cd1642e4d628738559e3.png);
+    height: 30vh;
+    width: 30vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+}
+
+.patricio {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b5032359-f479-4ccb-8c63-250719b1049e/d49gg7p-c40b7057-f8f2-4873-87ec-8e5f4d86c517.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I1MDMyMzU5LWY0NzktNGNjYi04YzYzLTI1MDcxOWIxMDQ5ZVwvZDQ5Z2c3cC1jNDBiNzA1Ny1mOGYyLTQ4NzMtODdlYy04ZTVmNGQ4NmM1MTcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.r8JmCqF7QU7YAVEOzPN9h7xnxM8QaDqondUW-EQFvQs);
+    height: 30vh;
+    width: 30vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 0%;
+}
+.arenita {
+    background-image: url(https://www.pintarcolorear.org/wp-content/uploads/2015/09/arenita-bob-esponja.gif);
+    height: 30vh;
+    width: 30vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 30%;
+    left: 95%;
+    animation: arenita 10s;
+    animation-iteration-count: infinite;
+}
+.balonarenita{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/018/817/820/original/cartoon-football-icon-png.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 30%;
+    left: 92%;
+    animation: balonarenita 10s;
+    animation-iteration-count: infinite;
+}
+
+.calamardo {
+    background-image: url(https://i.pinimg.com/originals/3b/26/3d/3b263d5bb7795bb10a5545666c812d3e.png);
+    height: 30vh;
+    width: 30vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+}
+
+.corchea1 {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/8526/8526195.png);
+    height: 5vh;
+    width: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 80%;
+    left: 7%;
+    animation: notaSubir 5s;
+    animation-iteration-count: infinite;
+}
+
+.corchea2 {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/8526/8526195.png);
+    height: 5vh;
+    width: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 80%;
+    left: 7%;
+    animation: notaSubir 10s;
+    animation-iteration-count: infinite;
+
+}
+
+.corchea3 {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/8526/8526195.png);
+    height: 5vh;
+    width: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 80%;
+    left: 7%;
+    animation: notaSubir 20s;
+    animation-iteration-count: infinite;
+
+}
+
+.corchea4 {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/8526/8526195.png);
+    height: 5vh;
+    width: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 80%;
+    left: 7%;
+    animation: notaSubir 30s;
+    animation-iteration-count: infinite;
+
+}
+
+.corchea5 {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/8526/8526195.png);
+    height: 5vh;
+    width: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 80%;
+    left: 7%;
+    animation: notaSubir 40s;
+    animation-iteration-count: infinite;
+
+}
+
+.notamusical1 {
+    background-image: url(https://i.pinimg.com/originals/1c/6d/89/1c6d89cd5971994d9584d635d4620f47.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    animation: notaSubir 5s;
+    animation-iteration-count: infinite;
+
+
+}
+
+.notamusical2 {
+    background-image: url(https://i.pinimg.com/originals/1c/6d/89/1c6d89cd5971994d9584d635d4620f47.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    animation: notaSubir 10s;
+    animation-iteration-count: infinite;
+
+
+}
+
+.notamusical3 {
+    background-image: url(https://i.pinimg.com/originals/1c/6d/89/1c6d89cd5971994d9584d635d4620f47.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    animation: notaSubir 20s;
+    animation-iteration-count: infinite;
+
+
+}
+
+.notamusical4 {
+    background-image: url(https://i.pinimg.com/originals/1c/6d/89/1c6d89cd5971994d9584d635d4620f47.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    animation: notaSubir 30s;
+    animation-iteration-count: infinite;
+
+
+}
+.notamusical5 {
+    background-image: url(https://i.pinimg.com/originals/1c/6d/89/1c6d89cd5971994d9584d635d4620f47.png);
+    height: 10vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    animation: notaSubir 40s;
+    animation-iteration-count: infinite;
+
+}
+
+
+
+
+@keyframes notaSubir {
+    0% {
+        top: 70;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+@keyframes balonarenita {
+    0% {
+        left: 92;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+@keyframes arenita {
+    0% {
+        left: 95;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
