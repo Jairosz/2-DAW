@@ -1,5 +1,5 @@
 <?php 
-    $modo = 3;
+    $modo = 1;
     switch ($modo) {
         case 1: // COMPARAR CADENAS $MOD0 = 1 
             $cadena1 = "Hola Mundo";
@@ -28,9 +28,9 @@
             $n = 5; 
             
             if (strncmp($cadena1, $cadena2, $n) === 0) {
-                echo "Las primeras $n letras de las cadenas son iguales";
+                echo "las primeras $n letras de las cadenas son iguales";
             } else {
-                echo "Las cadenas difieren en las primeras $n letras";
+                echo "las cadenas no son iguales en las primeras $n letras";
             }
             
             break;
