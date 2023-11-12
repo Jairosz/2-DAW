@@ -1,4 +1,4 @@
-const tamano = 4; 
+const tamano = 5; 
 
 
 const mensajeContainer = document.getElementById("mensaje");
