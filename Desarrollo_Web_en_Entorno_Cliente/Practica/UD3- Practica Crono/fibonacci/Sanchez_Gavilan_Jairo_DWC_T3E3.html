@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucesión de Fibonacci</title>
+</head>
+<body>
+
+  <h1>Generador de Sucesión de Fibonacci</h1>
+
+  <label for="numCount">Ingresa la cantidad de números de Fibonacci a generar:</label>
+  <input type="number" id="numCount" min="1" value="1">
+  <button onclick="generarFibonacci()">Generar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function generarFibonacci() {
+      // Obtener el número ingresado por el usuario
+      const numCountInput = document.getElementById("numCount");
+      const numCount = parseInt(numCountInput.value);
+
+      // Verificar si el número ingresado es válido
+      if (isNaN(numCount) || numCount < 1) {
+        alert("Por favor, ingresa un número entero positivo válido.");
+        return;
+      }
+
+      // Generar la sucesión de Fibonacci
+      const sucesionFibonacci = [0, 1];
+      for (let i = 2; i < numCount; i++) {
+        const siguienteNumero = sucesionFibonacci[i - 1] + sucesionFibonacci[i - 2];
+        sucesionFibonacci.push(siguienteNumero);
+      }
+
+      // Mostrar la sucesión en el documento HTML
+      const elementoResultado = document.getElementById("resultado");
+      elementoResultado.textContent = `Sucesión de Fibonacci (${numCount} números): ${sucesionFibonacci.join(', ')}`;
+    }
+  </script>
+
+</body>
+</html>
