@@ -51,11 +51,12 @@ $contenidoArbol = dibujarArbolNavidad($alturaArbol);
 echo '<table border="0" cellpadding="5" style="font-family: monospace;">';
 foreach ($contenidoArbol as $linea) {
     echo '<tr>';
-    echo '<td><span style="color: green; background-color: blue;">\</span></td>';
+    echo '<td><span style="color: green; background-color: blue;">\\</span></td>';
     echo '<td>' . $linea . '</td>';
     echo '</tr>';
 }
 echo '</table>';
+
 
 
 //Ejercicio 2 -> Diseñe una funcion que reciba como parametro un array y escriba en la pagina web de forma tabulada el contenido de ese array sin importar el numero de dimensiones que tenga.
