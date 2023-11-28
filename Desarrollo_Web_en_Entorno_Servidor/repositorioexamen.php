@@ -29,19 +29,39 @@ function ordenaArraysJairo($array, $array2, $valorNumerico) {
     }
 }
 
-//Ejercicio 1 -> Diseñar una funcion que dibuje un arbol de navidad, para ello debemos crear un array siguiendo las siguientes indicaciones: A partir del alto arbol ( que sera un parametro de la funcion) se generará el siguiebte array (ejemplo $altura = 5)
+//Ejercicio 1 -> Diseñar una funcion que dibuje un arbol de navidad, para ello debemos crear un array siguiendo las siguientes indicaciones: A partir del alto arbol ( que sera un parametro de la funcion) se generará el siguiebte array (ejemplo $altura = 5). Donde el "*" representa la nieve y el caracter "\" el arbol A continuacion deberás generar una
+// tabla en html que escriba el contenido del array. La nieve se scribira en color blanco sobre azul y el arbol en verde sobre azul
 function dibujarArbolNavidad($altura) {
+    $arbol = [];
+
     for ($i = 1; $i <= $altura; $i++) {
-        echo str_repeat(' ', $altura - $i);
-        echo str_repeat('*', $i);
-        echo '/';
-        echo str_repeat('*', $i);
-        echo "\n";
+        $espacios = str_repeat("&nbsp;", $altura - $i);
+        $nieve = str_repeat('<span style="color: white; background-color: blue;">*</span>', 2 * $i - 1);
+        $arbol[] = $espacios . $nieve;
     }
+
+    return $arbol;
 }
+
+// Probando la función con altura 5
+$alturaArbol = 5;
+$contenidoArbol = dibujarArbolNavidad($alturaArbol);
+
+// Mostrar el contenido del array en una tabla HTML
+echo '<table border="0" cellpadding="5" style="font-family: monospace;">';
+foreach ($contenidoArbol as $linea) {
+    echo '<tr>';
+    echo '<td><span style="color: green; background-color: blue;">\</span></td>';
+    echo '<td>' . $linea . '</td>';
+    echo '</tr>';
+}
+echo '</table>';
+
+
+//Ejercicio 2 -> Diseñe una funcion que reciba como parametro un array y escriba en la pagina web de forma tabulada el contenido de ese array sin importar el numero de dimensiones que tenga.
 //Ejercicio 4 Realizar una funcion que recibe como parametro una cadena y un valor numerico. La funcion debe devolver una cadena igual que la que se paso por parametro excepto en que se ha eliminado la palabra situada en la posicion que se ha pasado por parametro. Se debe hacer utilizando arrays. Si se especifica un numero de palara que no existe debe escribir un mensaje de error
-function eliminarPalabraEnPosicion($cadena, $posicion) {
-    $palabras = explode(" ", $cadena); // Convertir la cadena en un array de palabras
+function eliminarPalabra($cadena, $posicion) {
+    $palabras = explode(" ", $cadena); // (ARRAY) paso de cadena a ARRAY.
     
     if ($posicion < 1 || $posicion > count($palabras)) {
         return "Error: La posición especificada no existe.";
@@ -58,14 +78,8 @@ function eliminarPalabraEnPosicion($cadena, $posicion) {
 $cadena = "ME GUSTA MUCHO PHP Y JAVASCRIPT";
 $posicionAEliminar = 4;
 
-$resultado = eliminarPalabraEnPosicion($cadena, $posicionAEliminar);
+$resultado = eliminarPalabra($cadena, $posicionAEliminar);
 echo $resultado;
-
-
-//funciones
-dibujarArbolNavidad(4);
-
-
 ordenaArraysJairo($array, $array2, $valorNumerico);
 
 ?>
