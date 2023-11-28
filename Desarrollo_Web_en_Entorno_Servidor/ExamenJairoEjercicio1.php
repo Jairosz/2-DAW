@@ -8,8 +8,7 @@ function dibujarArbolNavidad($altura) {
 
     for ($i = 1; $i <= $altura; $i++) {
         $espacios = str_repeat("&nbsp;", $altura - $i);
-        $nieve = str_repeat('<span style="color: white; background-color: blue;">*</span>', 2 * $i - 1);
-        $arbol[] = $espacios . $nieve;
+        $arbol[] = $espacios . str_repeat('\\', 2 * $i - 1);
     }
 
     return $arbol;
@@ -28,5 +27,6 @@ foreach ($contenidoArbol as $linea) {
     echo '</tr>';
 }
 echo '</table>';
+
 
 ?>
