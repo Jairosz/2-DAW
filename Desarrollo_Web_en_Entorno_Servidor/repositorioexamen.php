@@ -32,12 +32,17 @@ function ordenaArraysJairo($array, $array2, $valorNumerico) {
 //Ejercicio 1 -> Diseñar una funcion que dibuje un arbol de navidad, para ello debemos crear un array siguiendo las siguientes indicaciones: A partir del alto arbol ( que sera un parametro de la funcion) se generará el siguiebte array (ejemplo $altura = 5)
 function dibujarArbolNavidad($altura) {
     for ($i = 1; $i <= $altura; $i++) {
+        echo str_repeat(' ', $altura - $i);
         echo str_repeat('*', $i);
         echo '/';
-        echo str_repeat('*', $i - 1);
+        echo str_repeat('*', $i);
         echo "\n";
     }
 }
+
+// Probando la función con altura 4
+dibujarArbolNavidad(4);
+
 
 //funciones
 dibujarArbolNavidad(4);
