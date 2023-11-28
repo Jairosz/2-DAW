@@ -27,5 +27,7 @@ function ordenaArraysJairo($array, $array2, $valorNumerico) {
             break;
     }
 }
+ordenaArraysJairo($array, $array2, $valorNumerico);
+
 
 ?>
