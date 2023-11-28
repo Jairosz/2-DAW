@@ -29,5 +29,4 @@ function ordenaArraysJairo($array, $array2, $valorNumerico) {
 }
 ordenaArraysJairo($array, $array2, $valorNumerico);
 
-
 ?>

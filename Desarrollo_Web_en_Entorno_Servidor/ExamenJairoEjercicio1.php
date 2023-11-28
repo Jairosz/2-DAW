@@ -19,10 +19,10 @@ $alturaArbol = 5;
 $contenidoArbol = dibujarArbolNavidad($alturaArbol);
 
 // Mostrar el contenido del array en una tabla HTML
-echo '<table border="0" cellpadding="5" style="font-family: monospace;">';
+echo '<table border="">';
 foreach ($contenidoArbol as $linea) {
     echo '<tr>';
-    echo '<td><span style="color: green; background-color: blue;">\\</span></td>';
+    echo '<td bgcolor="#00FFFF"><span>\\</span></td>';
     echo '<td>' . $linea . '</td>';
     echo '</tr>';
 }
