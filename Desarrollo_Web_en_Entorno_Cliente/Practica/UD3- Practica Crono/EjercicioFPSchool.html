@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saludo o Enlace Aleatorio - Jairo Sanchez Gavilan</title>
+</head>
+<body>
+
+  <div id="saludoEnlace"></div>
+
+  <script>
+    // Obtener la hora actual
+    const horaActual = new Date().getHours();
+
+    // Generar un número aleatorio entre 0 y 1
+    const numeroAleatorio = Math.random();
+
+    // Obtener el elemento HTML con el id "saludoEnlace"
+    const elementoSaludoEnlace = document.getElementById("saludoEnlace");
+
+    // Verificar si el elemento existe en el documento
+    if (elementoSaludoEnlace) {
+      // Comprobar si el número aleatorio es menor que 0.5
+      if (numeroAleatorio < 0.5) {
+        // Mostrar enlace a Myfpschool.com
+        elementoSaludoEnlace.innerHTML = '<a href="https://myfpschool.com">¡Descubre Myfpschool.com!</a>';
+      } else {
+        // Determinar si es buenos días o buenas tardes según la hora actual
+        if (horaActual < 15) {
+          elementoSaludoEnlace.textContent = 'Buenos días';
+        } else {
+          elementoSaludoEnlace.textContent = 'Buenas tardes';
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

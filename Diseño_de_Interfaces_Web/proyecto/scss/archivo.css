@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  margin-left: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul {
+  margin: 10px 10px 10px 0px;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+header ul li {
+  text-align: center;
+  border: 3px solid #063560;
+  background-color: #9ae7ff;
+  width: 33.3333333%;
+  height: 3rem;
+}
+header ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #3b90bd;
+}
+header ul li a:hover {
+  color: #9ae7ff;
+  transition-duration: 1s;
+}
+header ul li:hover {
+  background-color: #065382;
+  transition-duration: 1s;
+}
+
+h1 {
+  color: #1a6f94;
+}/*# sourceMappingURL=archivo.css.map */
