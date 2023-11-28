@@ -1,0 +1,38 @@
+$small: 576px;
+$medium: 768px;
+
+@mixin layout($color, $size: 14px) {
+  color: $color;
+  background-color: adjust-color($color, $lightness: -20%);
+  font-size: $size;
+  margin: $size;
+  padding: $size;
+  line-height: $size * 1.5;
+  border: 5px solid $color;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Verdana', sans-serif; 
+}
+
+#container {
+  @include layout(darkred);
+}
+
+@media (max-width: $small) {
+  #container {
+    @include layout(darkblue, 16px);
+  }
+}
+
+@media (min-width: $medium) {
+  #container {
+    @include layout(darkgreen, 20px);
+  }
+}
