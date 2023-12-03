@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estadísticas de Matrículas</title>
+  </head>
+  <body>
+    <h1>Estadísticas de Matrículas</h1>
+    <div id="probabilidades"></div>
+
+    <script>
+      // Función para obtener el valor de una cookie por su nombre
+      function getCookie(nombre) {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          // Verificar si la cookie comienza con el nombre buscado
+          if (cookie.startsWith(nombre + "=")) {
+            return cookie.substring(nombre.length + 1);
+          }
+        }
+        return null;
+      }
+
+      // Obtener el valor de la cookie 'matriculas'
+      const matriculasCookie = getCookie("matriculas");
+
+      // Verificar si la cookie 'matriculas' existe y no está vacía
+      if (matriculasCookie) {
+        // Convertir el valor de la cookie (cadena) a un array
+        const matriculasArray = JSON.parse(decodeURIComponent(matriculasCookie));
+
+        // Mostrar el contenido del array en el div 'probabilidades'
+        document.getElementById("probabilidades").innerHTML = `
+          <p>Contenido del array 'matriculas': ${JSON.stringify(
+            matriculasArray
+          )}</p>
+        `;
+      } else {
+        document.getElementById("probabilidades").innerHTML = `
+          <p>No se encontró la cookie 'matriculas' o está vacía.</p>
+        `;
+      }
+
+      // Estadísticas adicionales
+      const totalCombinaciones = 10000;
+      const doblePareja = 90;
+      const trio = 90;
+      const poker = 10;
+      const escalerasSimples = 64;
+      const escalerasCompletas = 378;
+
+      const probabilidadDoblePareja = (doblePareja / totalCombinaciones) * 100;
+      const probabilidadTrio = (trio / totalCombinaciones) * 100;
+      const probabilidadPoker = (poker / totalCombinaciones) * 100;
+      const probabilidadEscalerasSimples =
+        (escalerasSimples / totalCombinaciones) * 100;
+      const probabilidadEscalerasCompletas =
+        (escalerasCompletas / totalCombinaciones) * 100;
+
+      const probabilidadesHTML = `
+        <p>Probabilidad de doble pareja: ${probabilidadDoblePareja.toFixed(2)}%</p>
+        <p>Probabilidad de trío: ${probabilidadTrio.toFixed(2)}%</p>
+        <p>Probabilidad de poker: ${probabilidadPoker.toFixed(2)}%</p>
+        <p>Probabilidad de escaleras simples: ${probabilidadEscalerasSimples.toFixed(
+          2
+        )}%</p>
+        <p>Probabilidad de escaleras completas: ${probabilidadEscalerasCompletas.toFixed(
+          2
+        )}%</p>
+      `;
+
+      // Añadir estadísticas al contenido del div 'probabilidades'
+      document.getElementById("probabilidades").innerHTML += probabilidadesHTML;
+    </script>
+  </body>
+</html>
