@@ -7,6 +7,7 @@ function setCookie(nombre, valor, diasExpiracion) {
     document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
 }
 var matriculas = [];
+
 // La función introducirMatricula() solicita matrículas al usuario y las clasifica
 function introducirMatricula() {
     do {
@@ -77,7 +78,8 @@ function introducirMatricula() {
 }
 // Función para mostrar estadísticas en una nueva pestaña
 function mostrarEstadísticas() {
-    const nuevaPestana = window.open("MatriculasSecundariaJairo.html");
+    const nuevaPestana = window.open("MatriculasSecundariaJairo.html");              
+
     setTimeout(function () {
         nuevaPestana.close(); // Cierra la nueva pestaña después de 10 segundos
     }, 10000);
