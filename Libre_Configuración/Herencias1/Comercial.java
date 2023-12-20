@@ -1,4 +1,4 @@
-public class Comercial extends Empleado {
+public class Comercial extends Empleado{
     private double comision;
 
     public Comercial(String nombre, int edad, double salario, double comision) {
