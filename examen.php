@@ -22,17 +22,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $meritos = isset($_POST['meritos']) ? $_POST['meritos'] : array();  //********* IMPORTANTE (SELECCIÓN MÚLTIPLE) **********
     $pais = isset($_POST['paises']) ? $_POST['paises'] : '';
     $comentario = isset($_POST['comentario']) ? $_POST['comentario'] : '';
-    // mostrar campos del formulario subimeados del susuario.
+
+    $camposVacios = array();
+    if (empty($nombre)) {
+        $camposVacios[] = 'Nombre';
+    }
+    if (empty($apellidos)) {
+        $camposVacios[] = 'Apellidos';
+    }
+    if (empty($dni)) {
+        $camposVacios[] = 'DNI';
+    }
+
+    if (!empty($camposVacios)) {
+        $mensajeError = "Los siguientes campos están vacíos: ";
+        echo "<script>alert('$mensajeError'); window.location.href='formulario.php';</script>";
+        exit;
+    }
+
+    // mostrar campos del formulario submiteados del susuario.
     echo "<h2>Resultados del Formulario</h2>";
     echo "<p><strong>Nombre:</strong> $nombre</p>";
     echo "<p><strong>Apellidos:</strong> $apellidos</p>";
     echo "<p><strong>DNI:</strong> $dni</p>";
     echo "<p><strong>Sexo:</strong> $sexo</p>";
-    echo "<p><strong>Méritos:</strong> " . implode(", ", $meritos) . "</p>";
-    echo "<p><strong>País:</strong> $pais</p>";
+    echo "<p><strong>Meritos:</strong> " . implode(", ", $meritos) . "</p>";
+    echo "<p><strong>Pais:</strong> $pais</p>";
     echo "<p><strong>Comentario:</strong> $comentario";
     $contadorVisitas = incrementarContador($archivoContador);
-    echo "<p><strong>Visitas a esta página:</strong> $contadorVisitas</p>";
+    echo "<p><strong> visitas al formulario: </strong> $contadorVisitas</p>";
+
+    // comprobar la foto
 
     if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
         $nombreArchivo = $_FILES["foto"]["name"];
