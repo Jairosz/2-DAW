@@ -8,7 +8,7 @@
 </head>
 
 <body>
-   <form name="formulario" action="pagina2.php" method="POST">
+   <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
        <table>
            <tr>
                <td><label for="nombre">Introduzca su nombre:</label></td>
