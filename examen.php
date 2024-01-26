@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($camposVacios)) {
         $mensajeError = "Los siguientes campos están vacíos: " $camposVacios;
-        echo "<script>alert('$mensajeError'); window.location.href='formulario.html';</script>";
+        echo "<script>alert('$mensajeError'); window.location.href='formulario.php';</script>";
+        header("location: examen.html");
         exit;
     }
 
