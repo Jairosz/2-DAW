@@ -23,7 +23,17 @@
         echo "<p><strong>Discapacidad superior al 33%:</strong> $discapacidad</p>";
         echo "<p><strong>País:</strong> $pais</p>";
         echo "<p><strong>Comentario:</strong> $comentario</p>";
-    } else {
-        echo "<p>No hay resultados para mostrar.</p>";
-    }
+
+        // Verificar si se subió correctamente el archivo
+        if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
+            $nombreArchivo = $_FILES["foto"]["name"];
+            $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+        
+            echo "La extensión del archivo es: $extension";
+        } else {
+            echo "Error: No se ha seleccionado ninguna foto o hubo un problema con la carga.";
+        }
+        
+
+
     ?>
