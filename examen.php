@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<p><strong>Méritos:</strong> " . implode(", ", $meritos) . "</p>";
     echo "<p><strong>País:</strong> $pais</p>";
     echo "<p><strong>Comentario:</strong> $comentario";
+    $contadorVisitas = incrementarContador($archivoContador);
+    echo "<p><strong>Visitas a esta página:</strong> $contadorVisitas</p>";
 
     if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
         $nombreArchivo = $_FILES["foto"]["name"];
