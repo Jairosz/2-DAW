@@ -1,3 +1,20 @@
+<?php
+$archivoContador = 'contador.txt'; // Debes ajustar el nombre del archivo según tus necesidades
+
+function incrementarContador($archivoContador) {
+    if (file_exists($archivoContador)) {
+        $contador = (int)file_get_contents($archivoContador);
+        $contador++;
+    } else {
+        $contador = 1;
+    }
+
+    file_put_contents($archivoContador, $contador);
+    return $contador;
+}
+
+$visitas = incrementarContador($archivoContador);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +25,7 @@
 </head>
 
 <body>
+    <p>Contador de visitas: <?php echo $visitas; ?></p>
     <form name="formularioJairo" action="examen.php" method="POST"
         enctype="multipart/form-data">
         <table>
