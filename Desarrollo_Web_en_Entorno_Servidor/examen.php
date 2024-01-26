@@ -40,7 +40,28 @@
        </table>
    </form>
    
-    
 </body>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica si el formulario se ha enviado por POST
+
+    // Recupera los datos del formulario
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
+    $comentario = isset($_POST['comentario']) ? $_POST['comentario'] : '';
+    $fruta = isset($_POST['fruta']) ? $_POST['fruta'] : '';
+    $suscripcion = isset($_POST['suscripcion']) ? $_POST['suscripcion'] : 'No suscrito';
+
+    // Muestra los resultados
+    echo "<h2>Resultados del Formulario</h2>";
+    echo "<p><strong>Nombre:</strong> $nombre</p>";
+    echo "<p><strong>Comentario:</strong> $comentario</p>";
+    echo "<p><strong>Fruta seleccionada:</strong> $fruta</p>";
+    echo "<p><strong>Suscripción:</strong> $suscripcion</p>";
+} else {
+    // Si el formulario no se ha enviado por POST, muestra un mensaje indicando que no hay resultados
+    echo "<p>No hay resultados para mostrar.</p>";
+}
+?>
 
 </html>
