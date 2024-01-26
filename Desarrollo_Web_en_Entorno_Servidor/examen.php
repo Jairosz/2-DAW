@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario con Checkbox</title>
+    <title>Ejercicio 4 - Sugerencias</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        td:first-child {
+            vertical-align: top;
+            max-width: 13rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-    <form method="post" action="procesar_formulario.php">
-        <label>
-            <input type="checkbox" name="frutas[]" value="manzana"> Manzana
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="frutas[]" value="banana"> Banana
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="frutas[]" value="naranja"> Naranja
-        </label>
-        <br>
-        <input type="submit" value="Enviar">
+    <h1>Sugerencias para nuestra página web</h1>
+    <form name="formulario" action="pagina2.php" method="post">
+        <table>
+            <tr>
+                <td><label for="nombre">Introduzca su nombre:</label></td>
+                <td><input type="text" name="nombre" id="nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="comentario">Comentarios sobre esta página web:</label></td>
+                <td><textarea name="comentario" id="comentario" cols="50" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
+            </tr>
+        </table>
     </form>
 </body>
+
 </html>
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica si la clave 'frutas' existe en el array $_POST
-    if (isset($_POST['frutas']) && is_array($_POST['frutas'])) {
-        // Recorre las casillas de verificación seleccionadas
-        foreach ($_POST['frutas'] as $frutaSeleccionada) {
-            // Haz algo con cada valor de casilla de verificación seleccionada
-            echo "Fruta Seleccionada: $frutaSeleccionada<br>";
-        }
-    } else {
-        echo "No se seleccionaron frutas.";
-    }
-} else {
-    // Redirige o maneja el caso en el que el formulario no se envió mediante POST
-    echo "Formulario no enviado.";
-}
-?>
