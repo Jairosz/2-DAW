@@ -33,12 +33,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($dni)) {
         $camposVacios[] = 'DNI';
     }
+    if (empty($sexo)) {
+        $camposVacios[] = 'Sexo';
+    }
+    if (empty($pais)) {
+        $camposVacios[] = 'País';
+    }
+    if (empty($comentario)) {
+        $camposVacios[] = 'Comentario';
+    }
 
     if (!empty($camposVacios)) {
         $mensajeError = "Los siguientes campos están vacíos: " . implode(", ", $camposVacios);
         echo "<script>alert('$mensajeError'); window.location.href='examen.html';</script>";
         exit;
     }
+
 
     // mostrar campos del formulario submiteados del susuario.
     echo "<h2>Resultados del Formulario</h2>";
