@@ -81,7 +81,9 @@
             
                 echo "<h2>Resultados del Formulario</h2>";
                 echo "<p><strong>Nombre:</strong> nombre</p>";
-                echo "<p><strong>Comentario:</strong> comentario</p>";
+                echo "<p><strong>Apellidos:</strong> apellidos </p>";
+                echo "<p><strong>DNI:</strong> dni </p>";
+
             } else {
                 echo "<p>No hay resultados para mostrar.</p>";
             }
