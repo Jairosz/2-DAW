@@ -4,44 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4 - Sugerencias</title>
-    <style>
-        * {
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            color: blue;
-        }
-
-        td:first-child {
-            vertical-align: top;
-            max-width: 13rem;
-        }
-
-        label {
-            font-weight: bold;
-        }
-    </style>
+    <title></title>
 </head>
 
 <body>
-    <h1>Sugerencias para nuestra página web</h1>
-    <form name="formulario" action="pagina2.php" method="post">
-        <table>
-            <tr>
-                <td><label for="nombre">Introduzca su nombre:</label></td>
-                <td><input type="text" name="nombre" id="nombre"></td>
-            </tr>
-            <tr>
-                <td><label for="comentario">Comentarios sobre esta página web:</label></td>
-                <td><textarea name="comentario" id="comentario" cols="50" rows="10"></textarea></td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
-            </tr>
-        </table>
-    </form>
+   <form name="formulario" action="pagina2.php" method="POST">
+       <table>
+           <tr>
+               <td><label for="nombre">Introduzca su nombre:</label></td>
+               <td><input type="text" name="nombre" id="nombre"></td>
+           </tr>
+           <tr>
+               <td><label for="comentario">Comentarios sobre esta página web:</label></td>
+               <td><textarea name="comentario" id="comentario" cols="50" rows="10"></textarea></td>
+           </tr>
+           <tr>
+               <td> 
+                   <label for="fruta">Selecciona una fruta:</label>
+                   <select name="fruta" id="fruta">
+                       <option value="manzana">Manzana</option>
+                       <option value="banana">Banana</option>
+                       <option value="naranja">Naranja</option>
+                   </select>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <label for="suscripcion">¿Quieres suscribirte?</label>
+                   <input type="checkbox" name="suscripcion" id="suscripcion" value="si">
+               </td>
+           </tr>
+           <tr>
+               <td><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
+           </tr>
+       </table>
+   </form>
+   
+    
 </body>
 
 </html>
