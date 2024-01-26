@@ -58,9 +58,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nombreArchivo = $_FILES["foto"]["name"];
         $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
 
-        echo "<p>La extensión de la foto es: $extension</p>";
+        $directorioDestino = $_SERVER['HOME'] . "/Descargas/";
+        
+        $rutaCompleta = $directorioDestino . $nombreArchivo;
+
+        move_uploaded_file($_FILES["foto"]["tmp_name"], $rutaCompleta);
+
+        echo "<p>Imagen subida:</p>";
+        echo "<img src='$rutaCompleta' alt='Imagen Subida'>";
     } else {
         echo "<p>No has seleccionado ninguna foto, o no ha cargado correctamente</p>";
     }
-}
 ?>
