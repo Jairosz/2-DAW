@@ -1,77 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Jairo</title>
-</head>
-
-<body>
-<form name="formularioJairo" action="<?php echo _SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
-        <table>
-            <tr>
-                 <td><label for="nombre">Introduzca su nombre:</label></td>      <!-- NOMBRE -->
-                <td><input type="text" name="nombre" id="nombre"></td>
-            </tr>
-            <tr>
-                <td><label for="apellidos">Introduzca sus apellidos:</label></td> <!-- APELLIDOS -->
-                <td><input type="text" name="apellidos" id="apellidos"></td>
-            </tr>
-            <tr>
-                <td><label for="dni">Introduzca su DNI:</label></td> <!-- DNI -->
-                <td><input type="text" name="dni" id="dni"></td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="sexo">Selecciona tu sexo:</label><br>  <!-- SEXO -->
-                    <input type="radio" id="hombre" name="sexo" value="hombre">
-                    <label for="hombre">Hombre</label><br>
-                    <input type="radio" id="mujer" name="sexo" value="mujer">
-                    <label for="mujer">Mujer</label><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="carnet">Carnet de conducir B</label> <!-- CARNET DE CONDUCIR B -->
-                    <input type="checkbox" id="carnet" name="carnet" value="si">
-                </td>
-                <td>
-                    <label for="pensionista">Pensionista</label>  <!-- PENSIONISTA -->
-                    <input type="checkbox" id="pensionista" name="pensionista" value="si">
-                </td>
-                <td>
-                    <label for="experiencia">20 años o más de experiencia</label>   <!-- EXPERIENCIA -->
-                    <input type="checkbox" id="experiencia" name="experiencia" value="si">
-                </td>
-                <td>
-                    <label for="discapacidad">Discapacidad superior al 33%</label>  <!-- DISCAPACIDAD -->
-                    <input type="checkbox" id="discapacidad" name="discapacidad" value="si">
-                </td>
-            <tr>
-                <td> <label for="paises">Selecciona un país:</label>   <!-- PAÍS -->
-                    <select name="paises" id="paises">
-                        <option value="españa">España</option>
-                        <option value="portugal">Portugal</option>
-                        <option value="francia">Francia</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="comentario">Comentarios sobre esta página web:</label></td>   <!-- COMENTARIO -->
-                <td><textarea name="comentario" id="comentario" cols="50" rows="10"></textarea></td>
-            </tr>
-            <td>
-                <label for="foto">Sube tu foto carnet:</label>  <!-- FOTRO -->
-                <input type="file" id="foto" name="foto">
-            </td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
-            </tr>
-        </table>
-    </form>
-    <?php
+<?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //Comprobación para ver si los campos están vacíos o no
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
@@ -100,7 +27,3 @@
         echo "<p>No hay resultados para mostrar.</p>";
     }
     ?>
-
-</body>
-
-</html>
