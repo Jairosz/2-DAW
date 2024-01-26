@@ -35,9 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!empty($camposVacios)) {
-        $mensajeError = "Los siguientes campos están vacíos: " $camposVacios;
-        echo "<script>alert('$mensajeError'); window.location.href='formulario.php';</script>";
-        header("location: examen.html");
+        $mensajeError = "Los siguientes campos están vacíos: " . implode(", ", $camposVacios);
+        echo "<script>alert('$mensajeError'); window.location.href='examen.html';</script>";
         exit;
     }
 
@@ -47,21 +46,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<p><strong>Apellidos:</strong> $apellidos</p>";
     echo "<p><strong>DNI:</strong> $dni</p>";
     echo "<p><strong>Sexo:</strong> $sexo</p>";
-    echo "<p><strong>Meritos:</strong> " . implode(", ", $meritos) . "</p>";
-    echo "<p><strong>Pais:</strong> $pais</p>";
-    echo "<p><strong>Comentario:</strong> $comentario";
+    echo "<p><strong>Méritos:</strong> " . implode(", ", $meritos) . "</p>";
+    echo "<p><strong>País:</strong> $pais</p>";
+    echo "<p><strong>Comentario:</strong> $comentario</p>";
+
     $contadorVisitas = incrementarContador($archivoContador);
-    echo "<p><strong> visitas al formulario: </strong> $contadorVisitas</p>";
+    echo "<p><strong>Visitas al formulario:</strong> $contadorVisitas</p>";
 
     // comprobar la foto
-
     if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
         $nombreArchivo = $_FILES["foto"]["name"];
         $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
 
-        echo "<p>La extensión dela foto es: $extension</p>";
+        echo "<p>La extensión de la foto es: $extension</p>";
     } else {
-        echo "<p>no has sleccionado ninguna foto, o no ha cargado correctamente</p>";
+        echo "<p>No has seleccionado ninguna foto, o no ha cargado correctamente</p>";
     }
 }
 ?>
