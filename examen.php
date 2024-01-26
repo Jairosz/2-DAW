@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php
+<?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //Comprobación para ver si los campos están vacíos o no
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
