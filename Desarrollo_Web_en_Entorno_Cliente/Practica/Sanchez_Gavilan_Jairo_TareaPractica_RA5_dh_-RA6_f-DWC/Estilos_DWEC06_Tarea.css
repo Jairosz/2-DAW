@@ -1,18 +1,13 @@
-#zonadibujo {
-    border-top-width: thin;
-    border-right-width: thin;
-    border-bottom-width: thin;
-    border-left-width: thin;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(40, 10px); 
-    grid-template-rows: repeat(20, 10px);   
-    gap: 1px;
-    margin-top: 20px;
+.tablerodibujo {
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	width: auto;
 }
 .tablerodibujo td {
 	width: 10px;
@@ -51,19 +46,3 @@
 .seleccionado{
 	border: medium solid #939;
 }
-.celda {
-	width: 10px;
-	height: 10px;
-	display: inline-block;
-	border: 1px solid #ccc;
-  }
-  
-  .color {
-	width: 30px;
-	height: 20px;
-	display: inline-block;
-  }
-  
-  .seleccionado {
-	border: 2px solid #000;
-  }
