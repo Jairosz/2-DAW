@@ -1,0 +1,90 @@
+{
+    "RA Proyecto Desarrollo Aplicaciones Web": [
+    {
+    "id": "RA1",
+    "textoRA": "Planifica la creación de una interfaz web valorando y aplicando especificaciones de diseño.",
+    "criterios": {
+    "a": "Se ha reconocido la importancia de la comunicación visual y sus principios básicos.",
+    "b": "Se han analizado y seleccionado los colores y tipografías adecuados para su visualización en pantalla.",
+    "c": "Se han analizado alternativas para la presentación de la información en documentos Web.",
+    "d": "Se ha valorado la importancia de definir y aplicar la guía de estilo en el desarrollo de una aplicación Web.",
+    "e": "Se han utilizado y valorado distintas aplicaciones para el diseño de documentos Web.",
+    "f": "Se han utilizado marcos, tablas y capas para presentar la información de manera ordenada.",
+    "g": "Se han creado y utilizado plantillas de diseño."
+    },
+    "peso": "10%"
+    },
+    {
+    "id": "RA2",
+    "textoRA": "Crea interfaces Web homogéneos definiendo y aplicando estilos.",
+    "criterios": {
+    "a": "Se han reconocido las posibilidades de modificar las etiquetas HTML.",
+    "b": "Se han definido estilos de forma directa.",
+    "c": "Se han definido y asociado estilos globales en hojas externas.",
+    "d": "Se han definido hojas de estilos alternativas.",
+    "e": "Se han redefinido estilos.",
+    "f": "Se han identificado las distintas propiedades de cada elemento.",
+    "g": "Se han creado clases de estilos.",
+    "h": "Se han utilizado herramientas de validación de hojas de estilos.",
+    "i": "Se ha utilizado y actualizado la guía de estilo."
+    },
+    "peso": "42%"
+    },
+    {
+    "id": "RA3",
+    "textoRA": "Prepara archivos multimedia para la Web, analizando sus características y manejando herramientas específicas.",
+    "criterios": {
+    "a": "Se han reconocido las implicaciones de las licencias y los derechos de autor en el uso de material multimedia.",
+    "b": "Se han identificado los formatos de imagen, audio y vídeo a utilizar.",
+    "c": "Se han analizado las herramientas disponibles para generar contenido multimedia.",
+    "d": "Se han empleado herramientas para el tratamiento digital de la imagen.",
+    "e": "Se han utilizado herramientas para manipular audio y vídeo.",
+    "f": "Se han realizado animaciones a partir de imágenes fijas.",
+    "g": "Se han importado y exportado imágenes, audio y vídeo en diversos formatos según su finalidad.",
+    "h": "Se ha aplicado la guía de estilo."
+    },
+    "peso": "12%"
+    },
+    {
+    "id": "RA4",
+    "textoRA": "Integra contenido multimedia en documentos Web valorando su aportación y seleccionando adecuadamente los elementos interactivos.",
+    "criterios": {
+    "a": "Se han reconocido y analizado las tecnologías relacionadas con la inclusión de contenido multimedia e interactivo.",
+    "b": "Se han identificado las necesidades específicas de configuración de los navegadores Web para soportar contenido multimedia e interactivo.",
+    "c": "Se han utilizado herramientas gráficas para el desarrollo de contenido multimedia interactivo.",
+    "d": "Se ha analizado el código generado por las herramientas de desarrollo de contenido interactivo.",
+    "e": "Se han agregado elementos multimedia a documentos Web.",
+    "f": "Se ha añadido interactividad a elementos de un documento Web.",
+    "g": "Se ha verificado el funcionamiento de los elementos multimedia e interactivos en distintos navegadores."
+    },
+    "peso": "12%"
+    },
+    {
+    "id": "RA5",
+    "textoRA": "Desarrolla interfaces Web accesibles, analizando las pautas establecidas y aplicando técnicas de verificación.",
+    "criterios": {
+    "a": "Se ha reconocido la necesidad de diseñar Webs accesibles.",
+    "b": "Se ha analizado la accesibilidad de diferentes documentos Web.",
+    "c": "Se han identificado las principales pautas de accesibilidad al contenido.",
+    "d": "Se han analizado los posibles errores según los puntos de verificación de prioridad.",
+    "e": "Se ha alcanzado el nivel de conformidad deseado.",
+    "f": "Se han verificado los niveles alcanzados mediante el uso de test externos.",
+    "g": "Se ha verificado la visualización del interfaz con diferentes navegadores y tecnologías."
+    },
+    "peso": "12%"
+    },
+    {
+    "id": "RA6",
+    "textoRA": "Desarrolla interfaces Web amigables analizando y aplicando las pautas de usabilidad establecidas.",
+    "criterios": {
+    "a": "Se ha analizado la usabilidad de diferentes documentos Web.",
+    "b": "Se ha modificado el interfaz Web para adecuarlo al objetivo que persigue y a los usuarios a los que va dirigido.",
+    "c": "Se ha valorado la importancia del uso de estándares en la creación de documentos Web.",
+    "d": "Se ha verificado la facilidad de navegación de un documento Web mediante distintos periféricos.",
+    "e": "Se han analizado diferentes técnicas para verificar la usabilidad de un documento Web.",
+    "f": "Se ha verificado la usabilidad del interfaz Web creado en diferentes navegadores."
+    },
+    "peso": "12%"
+    }
+    ]
+    }
