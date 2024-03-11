@@ -21,6 +21,11 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet" />
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
    <link rel="stylesheet" href="./assets/css/estilosIndex.css" />
+   <style>
+    h1{
+      text-align: center;
+    }
+   </style>
  </head>
 
  <body>
@@ -41,127 +46,52 @@
          </div>
        </nav>
      </header>
-     <!-- Contenido de la tienda -->
-     <div class="row mt-4">
-       <!-- Primera fila de tarjetas -->
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen1.jpg" class="card-img-top" alt="Producto 1">
-             <div class="card-body">
-               <h5 class="card-title">Nike Low Vis</h5>
-               <p class="card-text">Precio 89,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Low Vis">
-               <input type="hidden" name="precio" value="89,99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
+     <?php
+      // Realiza la conexión a la base de datos
+      include 'C:\xampp\htdocs\ProyectoDWC\conexion_be.php'; // TRAEMOS LA CONEXION A LA DB DESDE OTRO ARCHIVO PHP
+
+      // Consulta para obtener todos los productos
+      $query = "SELECT * FROM productos";
+      $result = mysqli_query($conexion, $query);
+
+      // Verifica si la consulta fue exitosa
+      if ($result) {
+      ?> <div class="container">
+        <br>
+         <h1>Lista de Productos</h1>
+         <div class="row">
+           <?php
+            // Recorre los resultados y muestra los productos
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+             <div class="col-md-4 mb-4">
+               <div class="card">
+                 <img src="<?php echo $row['imagen']; ?>" class="card-img-top" alt="<?php echo $row['nombre']; ?>">
+                 <div class="card-body">
+                   <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
+                   <p class="card-text">Precio <?php echo $row['precio']; ?>€</p>
+                   <a href="#" class="btn btn-primary">Detalles</a>
+                 </div>
+               </div>
              </div>
-           </div>
-         </form>
-       </div>
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen2.jpg" class="card-img-top" alt="Producto 2">
-             <div class="card-body">
-               <h5 class="card-title">Nike Air Max</h5>
-               <p class="card-text">Precio 69,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Air Max">
-               <input type="hidden" name="precio" value="69.99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
-             </div>
-           </div>
-         </form>
-       </div>
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen3.jpg" class="card-img-top" alt="Producto 3">
-             <div class="card-body">
-               <h5 class="card-title">Nike Vapor Max</h5>
-               <p class="card-text">Precio 99,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Vapor Max">
-               <input type="hidden" name="precio" value="99.99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
-             </div>
-           </div>
-         </form>
-       </div>
-     </div>
-     <!-- Segunda fila de tarjetas -->
-     <div class="row">
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen4.jpg" class="card-img-top" alt="Producto 4">
-             <div class="card-body">
-               <h5 class="card-title">Nike Air Force 1</h5>
-               <p class="card-text">Precio 109,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Air Force 1">
-               <input type="hidden" name="precio" value="109.99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
-             </div>
-           </div>
-         </form>
-       </div>
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen5.jpg" class="card-img-top" alt="Producto 5">
-             <div class="card-body">
-               <h5 class="card-title">Nike Air Jordan</h5>
-               <p class="card-text">Precio 89,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Air Jordan">
-               <input type="hidden" name="precio" value="89.99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
-             </div>
-           </div>
-         </form>
-       </div>
-       <div class="col-md-4 mb-4">
-         <form action="procesar_compra.php" method="post">
-           <div class="card">
-             <img src="imagen6.jpg" class="card-img-top" alt="Producto 6">
-             <div class="card-body">
-               <h5 class="card-title">Nike Huarache</h5>
-               <p class="card-text">Precio 69,99€</p>
-               <!-- Campos ocultos para la información del producto -->
-               <input type="hidden" name="producto" value="Nike Huarache">
-               <input type="hidden" name="precio" value="69.99">
-               <!-- Botón de compra -->
-               <button type="submit" class="btn btn-primary" name="comprar">Comprar</button>
-             </div>
-           </div>
-         </form>
-       </div>
-     </div>
-     <!-- Cesta de la compra -->
-     <div class="row mt-4">
-       <div class="col-md-12">
-         <h3>Cesta de la Compra</h3>
-         <?php
-          if (isset($_SESSION['cesta']) && !empty($_SESSION['cesta'])) {
-            echo '<ul>';
-            foreach ($_SESSION['cesta'] as $item) {
-              echo '<li>' . $item['producto'] . ' - ' . $item['precio'] . '</li>';
+           <?php
             }
-            echo '</ul>';
-          } else {
-            echo '<p>La cesta está vacía.</p>';
-          }
-          ?>
+            ?>
+         </div>
        </div>
-     </div>
-   </div>
+
+ </html>
+ <?php
+      } else {
+        // Maneja el caso en que la consulta falla
+        echo "Error en la consulta SQL: " . mysqli_error($conexion);
+      }
+
+      // Cierra la conexión
+      mysqli_close($conexion);
+  ?>
+
+ </div>
  </body>
 
  </html>
